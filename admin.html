@@ -229,6 +229,7 @@
 
 <div id="admin-toolbar" style="display:none;position:fixed;bottom:16px;right:16px;z-index:9998;background:#1F3A2E;padding:12px 16px;border-radius:12px;box-shadow:0 6px 20px rgba(0,0,0,.35);align-items:center;gap:10px;font-family:'Noto Sans TC',sans-serif;">
   <span id="publishStatus" style="color:#F4F0E6;font-size:12.5px;max-width:200px;">點文字可改、點圖片可換、卡片右上角可刪除、方框底部可新增</span>
+  <button id="resetBtn" style="cursor:pointer;border:1px solid #F4F0E6;border-radius:8px;padding:10px 16px;background:transparent;color:#F4F0E6;font-weight:700;font-size:13px;">重設為網站預設內容</button>
   <button id="publishBtn" style="cursor:pointer;border:none;border-radius:8px;padding:10px 16px;background:#C16B3E;color:#fff;font-weight:700;font-size:14px;">發布到正式網站</button>
 </div>
 
@@ -237,6 +238,7 @@
   var PASSWORD_KEY = null;
   var EDITABLE_SELECTOR = 'h1,h2,h3,p,li,.contact-item,.eyebrow,.plan-for,.plan-note,.num,.unit,.stat-label,.step-num';
   var PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23E7DFCB'/><text x='50' y='58' font-size='36' text-anchor='middle' fill='%23A0703F'>+</text></svg>";
+  var DEFAULT_HTML = document.getElementById('site-content').innerHTML;
 
   function attachImageHandler(img){
     if (img.dataset.editBound) return;
@@ -342,6 +344,13 @@
 
   document.getElementById('gatePassword').addEventListener('keydown', function(e){
     if (e.key === 'Enter') document.getElementById('gateSubmit').click();
+  });
+
+  document.getElementById('resetBtn').addEventListener('click', function(){
+    if (!confirm('確定要把內容重設為網站目前的預設版面嗎?這會蓋掉您在後台做過的所有文字與圖片修改,重設後記得再按「發布」才會真的套用到正式網站。')) return;
+    document.getElementById('site-content').innerHTML = DEFAULT_HTML;
+    enableEditor();
+    document.getElementById('publishStatus').textContent = '已重設,確認內容後記得按「發布到正式網站」';
   });
 
   document.getElementById('publishBtn').addEventListener('click', function(){
