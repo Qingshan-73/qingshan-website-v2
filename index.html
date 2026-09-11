@@ -1,293 +1,452 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="zh-Hant-TW">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>青嵩身體調理中心｜身體狀態評估・運動按摩・動作訓練</title>
-<meta name="description" content="結合身體狀態評估、運動按摩與動作訓練，陪你找回身體最好的狀態。本中心非醫療機構，不提供醫療診斷與治療。">
-<link rel="stylesheet" href="styles.css">
+<title>青嵩工坊 · 中西式運動整復推拿中心 | 高雄運動按摩推薦、運動表現提升</title>
+<meta name="description" content="青嵩工坊·中西式運動整復推拿中心,位於高雄市新興區,傳承中式整復推拿三十年經驗,結合運動按摩、動作控制訓練,協助舒緩疲勞、提升運動表現、恢復活力。">
+<meta name="theme-color" content="#33465F">
+<meta property="og:title" content="青嵩工坊 · 中西式運動整復推拿中心 | 高雄運動按摩推薦">
+<meta property="og:description" content="位於高雄市新興區,傳承中式整復推拿三十年經驗,結合運動按摩、動作控制訓練,協助舒緩疲勞、提升運動表現。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qsqingshan.com/">
+<meta property="og:locale" content="zh_TW">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@500;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pine:#33465F;
+    --pine-light:#46597A;
+    --moss:#7288A3;
+    --clay:#C16B3E;
+    --clay-dark:#9B5230;
+    --bone:#F4F0E6;
+    --sand:#E7DFCB;
+    --ink:#26251F;
+    --ink-soft:#5B5A50;
+    --line:#D8D0BC;
+    --radius:10px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans TC', sans-serif;
+    background:var(--bone);
+    color:var(--ink);
+    line-height:1.75;
+  }
+  h1,h2,h3,.brand{
+    font-family:'Noto Serif TC', serif;
+    font-weight:700;
+    color:var(--pine);
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1080px; margin:0 auto; padding:0 24px;}
+  .eyebrow{
+    font-size:13px; letter-spacing:2px; color:var(--clay-dark);
+    font-weight:700; text-transform:uppercase; margin-bottom:10px; display:block;
+  }
+
+  /* NAV */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(244,240,230,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 24px; max-width:1080px; margin:0 auto;
+  }
+  .brand{font-size:20px; letter-spacing:1px;}
+  .brand span{color:var(--clay-dark); font-family:'Noto Sans TC', sans-serif; font-weight:400; font-size:12px; display:block; letter-spacing:3px; margin-top:2px;}
+  .nav-links{display:flex; gap:32px; font-size:15px; font-weight:500;}
+  .nav-links a:hover{color:var(--clay-dark);}
+  .cta-btn{
+    background:var(--clay-dark); color:#fff; padding:10px 22px; border-radius:999px;
+    font-weight:700; font-size:14px; white-space:nowrap;
+  }
+  .cta-btn:hover{background:#7E3F22;}
+  .nav-toggle{display:none; font-size:24px; background:none; border:none; color:var(--pine); cursor:pointer;}
+
+  /* HERO */
+  .hero{
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero .wrap{display:grid; grid-template-columns:1.1fr 0.9fr; gap:48px; align-items:center;}
+  .hero h1{font-size:40px; line-height:1.35; margin-bottom:20px;}
+  .hero p.lead{font-size:17px; color:var(--ink-soft); max-width:46ch; margin-bottom:32px;}
+  .hero-ctas{display:flex; gap:16px; flex-wrap:wrap;}
+  .btn-secondary{
+    border:1.5px solid var(--pine); color:var(--pine); padding:10px 22px; border-radius:999px; font-weight:700; font-size:14px;
+  }
+  .btn-secondary:hover{background:var(--pine); color:#fff;}
+
+  .hero .wrap{position:relative;}
+  .hero-art{
+    aspect-ratio:1/1; border-radius:16px; background:var(--pine);
+    position:relative; overflow:visible; z-index:2;
+  }
+  .hero-art .hero-photo{
+    width:100%; height:100%; object-fit:cover; object-position:center 30%;
+    border-radius:16px; display:block;
+  }
+  .hero-logo{
+    position:absolute; width:44%; left:-16%; bottom:-10%;
+    background:#fff; border-radius:16px; padding:14px;
+    box-shadow:0 20px 40px rgba(38,37,31,0.28);
+    z-index:3;
+  }
+
+  /* HERITAGE THREAD (signature element) */
+  .heritage{padding:72px 0; background:#1F3A2E; color:#F4F0E6;}
+  .heritage .eyebrow{color:#D7B48C;}
+  .heritage h2{color:#fff; font-size:28px; margin-bottom:8px;}
+  .heritage-sub{color:#C9D2C6; max-width:56ch; margin-bottom:48px; font-size:15px;}
+  .thread{position:relative; display:flex; justify-content:space-between; align-items:flex-start; gap:24px;}
+  .thread::before{
+    content:''; position:absolute; top:11px; left:6%; right:6%; height:2px;
+    background:repeating-linear-gradient(to right, #D7B48C 0 8px, transparent 8px 14px);
+  }
+  .thread-node{flex:1; position:relative; padding-top:34px; max-width:320px;}
+  .thread-node::before{
+    content:''; position:absolute; top:0; left:0; width:24px; height:24px; border-radius:50%;
+    background:var(--clay); border:4px solid #1F3A2E; box-shadow:0 0 0 2px #D7B48C;
+  }
+  .thread-year{font-family:'Noto Serif TC', serif; font-weight:700; font-size:22px; color:#fff; margin-bottom:6px;}
+  .thread-node p{color:#C9D2C6; font-size:14.5px;}
+  .thread-node strong{color:#fff;}
+
+  /* SECTION generic */
+  section.block{padding:80px 0;}
+  .section-head{max-width:56ch; margin-bottom:44px;}
+  .section-head h2{font-size:28px; margin-bottom:12px;}
+  .section-head p{color:var(--ink-soft); font-size:15.5px;}
+
+  /* TEAM */
+  .team-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:20px;}
+  .team-card{
+    border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);
+    aspect-ratio:3/4; background:var(--sand); position:relative;
+  }
+  .team-card img{width:100%; height:100%; object-fit:cover; display:block;}
+
+  /* SERVICES */
+  .service-grid{display:grid; grid-template-columns:repeat(4, 1fr); gap:20px;}
+
+  /* PLAN CARDS (price + included items) */
+  .plan-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;}
+  .plan-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius);
+    overflow:hidden; display:flex; flex-direction:column;
+  }
+  .plan-head{background:var(--pine); color:#fff; padding:20px 22px 16px;}
+  .plan-head h3{color:#fff; font-size:19px; margin-bottom:6px;}
+  .plan-head .plan-for{font-size:13px; color:#D7B48C; font-weight:700;}
+  .plan-body{padding:22px; flex:1; display:flex; flex-direction:column;}
+  .plan-price{margin-bottom:14px;}
+  .plan-price .num{font-family:'Noto Serif TC',serif; font-weight:700; font-size:26px; color:var(--pine);}
+  .plan-price .unit{font-size:13px; color:var(--ink-soft); margin-left:4px;}
+  .plan-list{list-style:none; margin-bottom:16px;}
+  .plan-list li{padding-left:22px; position:relative; margin-bottom:8px; font-size:14px; color:var(--ink);}
+  .plan-list li::before{content:'✓'; position:absolute; left:0; color:var(--clay-dark); font-weight:700;}
+  .plan-note{margin-top:auto; padding-top:14px; border-top:1px dashed var(--line); font-size:12.5px; color:var(--ink-soft); line-height:1.6;}
+  .plan-quote{font-size:14px; color:var(--ink-soft); line-height:1.9; margin-bottom:16px;}
+  @media (max-width:860px){ .plan-grid{grid-template-columns:1fr;} }
+  .service-card{
+    background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:24px 20px;
+    text-align:left;
+  }
+  .service-icon{width:40px; height:40px; margin-bottom:16px; color:var(--clay);}
+  .service-card h3{font-size:16px; margin-bottom:8px; color:var(--pine);}
+  .service-card p{font-size:13.5px; color:var(--ink-soft);}
+
+  /* QA */
+  .qa-bg{background:var(--sand);}
+  .qa-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:20px;}
+  .qa-item{background:var(--bone); border-radius:var(--radius); padding:22px 24px; border:1px solid var(--line);}
+  .qa-item .q{font-weight:700; color:var(--pine); margin-bottom:6px; font-size:15px;}
+  .qa-item .a{font-size:14px; color:var(--ink-soft);}
+
+  /* NEWS */
+  .news-grid{display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:20px;}
+  .news-card{border:1px solid var(--line); border-radius:var(--radius); overflow:hidden; background:#fff; position:relative; border-left:4px solid var(--pine);}
+  .news-body{padding:20px 22px;}
+  .news-date{font-size:12.5px; color:var(--clay-dark); font-weight:700; margin-bottom:6px;}
+  .news-body h3{font-size:15.5px; color:var(--pine); margin-bottom:6px;}
+  .news-body p{font-size:13.5px; color:var(--ink-soft);}
+
+  /* CONTACT */
+  .contact{background:var(--pine); color:#F4F0E6; padding:72px 0;}
+  .contact .wrap{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .contact h2{color:#fff; font-size:26px; margin-bottom:24px;}
+  .contact-item{display:flex; gap:14px; margin-bottom:18px; font-size:15px;}
+  .contact-item .label{color:#D7B48C; font-weight:700; min-width:70px;}
+  .social-row{display:flex; gap:14px; margin-top:24px;}
+  .social-row a{
+    width:40px; height:40px; border-radius:50%; border:1.5px solid #C9D2C6;
+    display:flex; align-items:center; justify-content:center; font-size:13px; font-weight:700;
+  }
+  .social-row a:hover{background:var(--clay); border-color:var(--clay);}
+  .map-frame{border-radius:var(--radius); overflow:hidden; border:1px solid rgba(255,255,255,0.2); min-height:280px;}
+  .map-frame iframe{width:100%; height:100%; min-height:280px; border:0;}
+
+  footer{padding:28px 0; text-align:center; font-size:12.5px; color:var(--ink-soft); background:var(--bone); border-top:1px solid var(--line);}
+
+  @media (max-width:860px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-art{order:-1; max-width:340px; margin:0 auto; overflow:visible;}
+    .hero-logo{left:auto; right:-8%; bottom:-12%; width:38%;}
+    .service-grid, .qa-grid{grid-template-columns:1fr 1fr;}
+    .contact .wrap{grid-template-columns:1fr;}
+    .nav-links{position:fixed; top:64px; left:0; right:0; background:var(--bone); flex-direction:column; padding:20px 24px; gap:18px; border-bottom:1px solid var(--line); display:none;}
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+  @media (max-width:560px){
+    .hero h1{font-size:30px;}
+    .service-grid, .qa-grid{grid-template-columns:1fr;}
+    .thread{flex-direction:column;}
+    .thread::before{display:none;}
+  }
+</style>
+<base target="_blank">
 <base target="_blank">
 </head>
 <body>
 
 <header>
   <nav>
-    <a class="brand" href="#top">青嵩<span>QINGSHAN</span></a>
-    <button class="nav-toggle" aria-label="開啟選單" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
-    <div class="nav-links">
-      <a href="#about">關於青嵩</a>
+    <a href="#top" class="brand">青嵩工坊<span>中西式運動整復推拿中心 · 高雄新興區</span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">關於我們</a>
       <a href="#services">服務項目</a>
-      <a href="#plans">課程方案</a>
-      <a href="#qa">常見問題</a>
       <a href="#news">最新消息</a>
+      <a href="#contact">聯絡我們</a>
+      <a href="https://lin.ee/89dvdlm" class="cta-btn" style="display:inline-block;">預約體驗</a>
     </div>
-    <a class="cta-btn" href="#contact">預約諮詢</a>
+    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">☰</button>
   </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero" id="top">
   <div class="wrap">
     <div>
-      <span class="eyebrow">Body・Brain・Balance</span>
-      <h1>健康的大腦，源於健康的身體</h1>
-      <p class="lead">動作由大腦指揮，表現由身體承載。<br>
-      我們結合身體狀態評估、運動按摩與動作訓練，<br>
-      陪你找回身體最好的狀態。</p>
+      <span class="eyebrow">高雄 · 新興區 · 中西式運動整復推拿</span>
+      <h1>三十年整復手藝的傳承,是您運動後最安心的休息站</h1>
+      <p class="lead">青嵩工坊結合中式整復推拿與運動按摩專業,為跑步、球類等運動愛好者舒緩疲勞、放鬆緊繃肌肉,找回身體的活力與靈活度。</p>
       <div class="hero-ctas">
-        <a class="cta-btn" href="#contact">預約諮詢</a>
-        <a class="btn-secondary" href="#services">了解服務</a>
+        <a href="https://lin.ee/89dvdlm" class="cta-btn">預約體驗</a>
+        <a href="#about" class="btn-secondary">認識我們的傳承</a>
       </div>
     </div>
     <div class="hero-art">
-      <img src="images/hero.jpg" alt="身體調理與動作訓練">
+      <img class="hero-photo" src="images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行運動按摩" loading="eager" fetchpriority="high" decoding="async">
+      <img class="hero-logo" src="images/logo-hero.png" alt="青嵩工坊標誌" decoding="async">
     </div>
   </div>
 </section>
 
-<!-- 三步驟 -->
-<section class="block" id="about">
+<section class="heritage" id="about">
   <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">How it works</span>
-      <h2>三步驟，找回身體最好的狀態</h2>
-      <p>從了解身體開始，循序漸進地調理與訓練，讓身體與大腦重新建立良好的連結。</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg></div>
-        <h3>01 了解</h3>
-        <p>身體狀態評估，看見緊繃與不平衡。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3v18M3 12h18"/></svg></div>
-        <h3>02 舒緩</h3>
-        <p>中西式整復與運動按摩，舒緩緊繃與不適，調理身體狀態。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 14c2-6 6-8 8-8s6 2 8 8"/><circle cx="12" cy="6" r="2"/></svg></div>
-        <h3>03 訓練</h3>
-        <p>動作控制訓練，建立身體與大腦的連結。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s-7-4.5-7-10a7 7 0 0 1 14 0c0 5.5-7 10-7 10z"/></svg></div>
-        <h3>日常保養</h3>
-        <p>把身體照顧變成習慣，維持在最好的狀態。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- HERITAGE THREAD -->
-<section class="heritage">
-  <div class="wrap">
-    <span class="eyebrow">Our Story</span>
-    <h2>一條走過多年的身體照顧之路</h2>
-    <p class="heritage-sub">從第一間工作室開始，我們始終相信：照顧身體，是照顧生活最根本的方式。</p>
+    <span class="eyebrow">傳承 HERITAGE</span>
+    <h2>從陳健嵩到陳青杉,兩代人的整復之路</h2>
+    <p class="heritage-sub">青嵩工坊的名字,源自創辦人陳青杉先生的父親——陳健嵩先生。工作室成立於2022年,座落於高雄市新興區,致力於將這份技術與專業服務延續下去。</p>
     <div class="thread">
       <div class="thread-node">
-        <div class="thread-year">2016</div>
-        <p><strong>工作室成立</strong>，從運動按摩與身體調理出發。</p>
+        <div class="thread-year">民國80年</div>
+        <p><strong>陳健嵩先生</strong>投入中式整復推拿,服務無數需要舒緩調理的鄉親,累積深厚口碑與經驗。</p>
       </div>
       <div class="thread-node">
-        <div class="thread-year">2019</div>
-        <p><strong>導入動作訓練</strong>，從舒緩延伸到日常訓練。</p>
+        <div class="thread-year">2022年</div>
+        <p><strong>陳青杉先生</strong>成立青嵩工坊,結合美式脊骨、運動按摩與國家隊防護經驗,承接這份手藝並發揚光大。</p>
       </div>
       <div class="thread-node">
-        <div class="thread-year">2023</div>
-        <p><strong>青嵩中心啟用</strong>，評估、按摩、訓練在同一個空間完成。</p>
+        <div class="thread-year">現在</div>
+        <p>青嵩工坊持續為高雄的運動愛好者,提供專業放鬆與提升運動表現的服務空間。</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="block" id="team">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Team</span>
-      <h2>認識我們的夥伴</h2>
-      <p>每位夥伴都經過完整的專業訓練，熟悉身體結構與動作原理。</p>
+      <span class="eyebrow">團隊介紹</span>
+      <h2>整復師推薦</h2>
     </div>
-    <div class="team-grid">
-      <div class="team-card"><img src="images/team1.jpg" alt="團隊成員"></div>
-      <div class="team-card"><img src="images/team2.jpg" alt="團隊成員"></div>
-      <div class="team-card"><img src="images/team3.jpg" alt="團隊成員"></div>
-      <div class="team-card"><img src="images/team4.jpg" alt="團隊成員"></div>
+    <div class="team-grid" data-repeatable="team-card">
+      <div class="team-card"><img src="images/team-chenqingshan.jpg" alt="陳青杉" loading="lazy" decoding="async"></div>
+      <div class="team-card"><img src="images/team-changjunwei.jpg" alt="常鈞崴" loading="lazy" decoding="async"></div>
+      <div class="team-card"><img src="images/team-member3.jpg" alt="團隊成員" loading="lazy" decoding="async"></div>
+      <!-- 要新增成員,複製一整段 <div class="team-card">...</div>,貼在這裡就會自動排進版面 -->
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="block" id="services" style="background:var(--sand);">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">Services</span>
-      <h2>服務項目</h2>
-      <p>以「了解 → 舒緩 → 訓練」為核心，依照你的身體狀態規劃最適合的組合。</p>
-    </div>
-    <div class="service-grid">
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg></div>
-        <h3>身體狀態評估</h3>
-        <p>透過觀察與基本測試，了解身體的緊繃與平衡狀態，作為後續調理方向的參考。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 12c2-5 10-5 12 0s-10 5-12 0z"/></svg></div>
-        <h3>運動按摩</h3>
-        <p>針對日常累積的緊繃與疲勞，以手法舒緩不適、調理身體狀態。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18c3-8 13-8 16 0"/></svg></div>
-        <h3>動作控制訓練</h3>
-        <p>透過基礎動作練習，建立身體與大腦的連結，讓日常動作更順暢自在。</p>
-      </div>
-      <div class="service-card">
-        <div class="service-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.5 6 6.5.5-5 4.5 1.5 6.5L12 17l-5.5 3.5L8 14 3 9.5 9.5 9z"/></svg></div>
-        <h3>中西式整復</h3>
-        <p>結合傳統整復手法與現代身體觀念，協助身體回到平衡的狀態。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PLANS -->
-<section class="block" id="plans">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">Plans</span>
-      <h2>課程方案</h2>
-      <p>可依個人狀態與需求搭配，歡迎先預約諮詢，我們會為你說明最適合的組合。</p>
+      <span class="eyebrow">收費方案</span>
+      <h2>結合中西手法的整復服務</h2>
+      <p>依調理部位與方式分成三種方案,價格與內含項目一次看清楚。</p>
     </div>
     <div class="plan-grid">
       <div class="plan-card">
-        <div class="plan-head"><h3>單次體驗</h3><span class="plan-for">第一次來青嵩</span></div>
+        <div class="plan-head">
+          <h3>附肢骨調理</h3>
+          <div class="plan-for">適合肩、肘、腕、髖、膝、踝部調理</div>
+        </div>
         <div class="plan-body">
-          <div class="plan-price"><span class="num">NT$ 1,200</span><span class="unit">/ 次</span></div>
+          <div class="plan-price"><span class="num">NT$600–1800</span><span class="unit">20–30分鐘起,以部位計價</span></div>
           <ul class="plan-list">
             <li>身體狀態評估</li>
-            <li>運動按摩 60 分鐘</li>
-            <li>日常保養建議</li>
+            <li>美式整復</li>
+            <li>肌筋膜鬆動術</li>
+            <li>動作控制</li>
+            <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <p class="plan-note">建議首次造訪選擇此方案，先讓我們了解你的身體狀態。</p>
+          <div class="plan-note">第二部位(例如左肩+右肩)加購價 300元/部位</div>
         </div>
       </div>
       <div class="plan-card">
-        <div class="plan-head"><h3>調理方案</h3><span class="plan-for">想穩定保養身體</span></div>
+        <div class="plan-head">
+          <h3>中軸骨調理</h3>
+          <div class="plan-for">適合頸、胸、腰、臀部(骨盆)調理</div>
+        </div>
         <div class="plan-body">
-          <div class="plan-price"><span class="num">NT$ 5,400</span><span class="unit">/ 5 次</span></div>
+          <div class="plan-price"><span class="num">NT$1200–1800</span><span class="unit">60分鐘起</span></div>
           <ul class="plan-list">
-            <li>每次含評估與按摩</li>
-            <li>可依狀態調整手法</li>
-            <li>期限 3 個月內使用完畢</li>
+            <li>身體狀態評估</li>
+            <li>美式整復</li>
+            <li>肌筋膜鬆動術</li>
+            <li>紅外線拔罐器</li>
+            <li>深層按摩槍</li>
+            <li>動作控制</li>
+            <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <p class="plan-note">適合工作忙碌、想定期保養身體的你。</p>
+          <div class="plan-note">搭配附肢骨調理(例如肩+頸、腰+髖)加購價 300元/20分</div>
         </div>
       </div>
       <div class="plan-card">
-        <div class="plan-head"><h3>訓練方案</h3><span class="plan-for">想建立動作習慣</span></div>
+        <div class="plan-head">
+          <h3>全身按摩</h3>
+          <div class="plan-for">適合全身放鬆、舒緩疲勞</div>
+        </div>
         <div class="plan-body">
-          <div class="plan-price"><span class="num">諮詢報價</span></div>
-          <p class="plan-quote">結合身體狀態評估、按摩與動作控制訓練，依個人目標規劃課程內容與頻率。</p>
+          <p class="plan-quote">在這個匆忙的城市中,讓我們停下腳步,將疲憊轉化為輕盈,將壓力轉化為寧靜,讓我們徜徉在這份身心的溫柔之中。</p>
+          <div class="plan-price"><span class="num">NT$1800–2200</span><span class="unit">90分鐘</span></div>
           <ul class="plan-list">
-            <li>一對一動作訓練</li>
-            <li>個人化課表安排</li>
-            <li>定期回顧與調整</li>
+            <li>身體狀態評估</li>
+            <li>深層按摩槍</li>
+            <li>肌筋膜鬆動術</li>
+            <li>紅外線拔罐器</li>
+            <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <p class="plan-note">請先預約諮詢，由夥伴為你說明方案細節。</p>
+          <div class="plan-note">搭配美式整復加購價 400元</div>
         </div>
       </div>
+    </div>
+    <div style="margin-top:32px; border-radius:var(--radius); overflow:hidden; border:1px solid var(--line);">
+      <img src="images/movement-training.jpg" alt="青嵩工坊團隊進行動作評估訓練" style="width:100%; display:block;" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
 
-<!-- QA -->
-<section class="block qa-bg" id="qa">
+<section class="block qa-bg">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">FAQ</span>
-      <h2>常見問題</h2>
+      <span class="eyebrow">初次到訪</span>
+      <h2>來之前,你可能想知道的事</h2>
+      <p>不只是運動員——久坐、姿勢不良造成的肌肉緊繃,也是我們每天在處理的日常。</p>
     </div>
     <div class="qa-grid">
       <div class="qa-item">
-        <p class="q">第一次來需要做什麼準備？</p>
-        <p class="a">穿著方便活動的衣物即可。第一次會先進行身體狀態評估，請預留約 90 分鐘。</p>
+        <div class="q">整天坐辦公室、肩頸僵硬也可以來嗎?</div>
+        <div class="a">可以。除了提升運動表現,久坐、姿勢不良造成的肌肉緊繃,也是我們平常最常處理的狀況之一。</div>
       </div>
       <div class="qa-item">
-        <p class="q">運動按摩會痛嗎？</p>
-        <p class="a">手法強度會依你的身體狀態與接受度調整，過程中隨時可以告訴我們你的感受。</p>
+        <div class="q">調理前需要空腹嗎?</div>
+        <div class="a">不用刻意空腹,建議調理前1~2小時進食到6~7分飽即可,太餓或太飽都不建議。</div>
       </div>
       <div class="qa-item">
-        <p class="q">我有舊傷可以做課程嗎？</p>
-        <p class="a">如有疾病或舊傷，請先諮詢專業醫師。造訪時也請主動告知，我們會依你的狀態調整內容。</p>
+        <div class="q">調理後多久可以恢復正常活動?</div>
+        <div class="a">建議先降到平常強度的3成左右(例如原本跑步100分鐘先降到30分鐘),觀察沒有不適後再逐步恢復。</div>
       </div>
       <div class="qa-item">
-        <p class="q">你們是醫療機構嗎？</p>
-        <p class="a">不是。本中心非醫療機構，不提供醫療診斷與治療，我們做的是身體狀態的調理與訓練。</p>
+        <div class="q">多久該回來調理一次?</div>
+        <div class="a">可依身體疲勞感(1~10分)抓頻率:1~3分約一個月一次,4~6分約2~3週一次,7~9分建議每週1~2次。</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- NEWS -->
 <section class="block" id="news">
   <div class="wrap">
     <div class="section-head">
-      <span class="eyebrow">News</span>
-      <h2>最新消息</h2>
+      <span class="eyebrow">最新消息</span>
+      <h2>青嵩動態</h2>
     </div>
-    <div class="news-grid">
+    <div class="news-grid" data-repeatable="news-card">
       <div class="news-card">
         <div class="news-body">
-          <p class="news-date">2026-08-20</p>
-          <h3>九月身體保養小聚開放報名</h3>
-          <p>分享日常舒緩與動作練習，歡迎老朋友新朋友一起來。</p>
+          <div class="news-date">2024-02-04</div>
+          <h3>2024年春假</h3>
+          <p>預祝各位嵩友們 2024 龍年大吉。</p>
         </div>
       </div>
       <div class="news-card">
         <div class="news-body">
-          <p class="news-date">2026-07-05</p>
-          <h3>中心空間完成整修</h3>
-          <p>評估區與訓練區重新規劃，動線更順暢、環境更舒適。</p>
+          <div class="news-date">2023-03-31</div>
+          <h3>成吉思汗特約商家</h3>
+          <p>凡出示員工/會員證明享有85折優惠,商品享有3期零利率。</p>
         </div>
       </div>
       <div class="news-card">
         <div class="news-body">
-          <p class="news-date">2026-06-01</p>
-          <h3>新夥伴加入青嵩</h3>
-          <p>歡迎新的身體調理夥伴，擅長運動按摩與動作訓練指導。</p>
+          <div class="news-date">2023-07-08</div>
+          <h3>有重訓有運動,核心真的有用力嗎?</h3>
+          <p>從核心肌群的收縮時機,談談大家常忽略的運動細節。</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="wrap">
     <div>
-      <h2>預約諮詢</h2>
-      <div class="contact-item"><span class="label">電話</span><span>02-XXXX-XXXX</span></div>
-      <div class="contact-item"><span class="label">地址</span><span>台北市○○區○○路○○號</span></div>
-      <div class="contact-item"><span class="label">時間</span><span>週二至週日 10:00 – 20:00（週一休）</span></div>
-      <div class="contact-item"><span class="label">LINE</span><span>@qingshan</span></div>
+      <span class="eyebrow" style="color:#D7B48C;">聯絡我們</span>
+      <h2>歡迎預約體驗</h2>
+      <div class="contact-item"><span class="label">電話</span><a href="tel:0912641105">0912-641-105</a></div>
+      <div class="contact-item"><span class="label">地址</span><span>高雄市新興區林森一路242號1樓</span></div>
+      <div class="contact-item"><span class="label">營業</span><span>週一至週日 11:30–20:30(最後預約)<br>特約時段 09:00–11:00</span></div>
       <div class="social-row">
-        <a href="#" aria-label="LINE">LINE</a>
-        <a href="#" aria-label="Instagram">IG</a>
-        <a href="#" aria-label="Facebook">FB</a>
+        <a href="https://www.facebook.com/qingsongstudio/" aria-label="Facebook">FB</a>
+        <a href="https://lin.ee/biKerHf" aria-label="LINE">LINE</a>
+        <a href="https://www.instagram.com/qs_studio_/" aria-label="Instagram">IG</a>
+        <a href="mailto:qs.studio03@gmail.com" aria-label="Email">MAIL</a>
       </div>
     </div>
     <div class="map-frame">
-      <iframe src="https://www.google.com/maps/embed?pb=" loading="lazy" title="青嵩位置地圖"></iframe>
+      <iframe src="https://www.google.com/maps?q=高雄市新興區林森一路242號&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <p>© 2026 青嵩身體調理中心　本中心非醫療機構，不提供醫療診斷與治療。如有疾病，請諮詢專業醫師。</p>
-  </div>
+  青嵩傳統整復推拿 ・ 統編:91522632 ・ 本中心非醫療院所,不提供任何醫療行為<br>
+  青嵩工坊 qs studio 版權所有 © 2023–2026 All Rights Reserved.
 </footer>
 
+<script>
+  document.getElementById('navToggle').addEventListener('click', function(){
+    document.getElementById('navLinks').classList.toggle('open');
+  });
+</script>
 </body>
 </html>
