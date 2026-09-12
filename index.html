@@ -162,20 +162,21 @@
         </figure>
       </div>
 
-      <!-- ◆ 後台欄位：stat_1~3_value + stat_1~3_label
-           注意：數值填 data-count（純數字）；後綴如 "+" 填 data-suffix（可省略） -->
+      <!-- ◆ 後台欄位：stats_lede（傳承引言）＋ stat_1~3_value + stat_1~3_label
+           注意：數值填 data-count（純數字，會自動加千分位）；後綴如 "+" 填 data-suffix（可省略） -->
       <div class="stats reveal" id="stats">
+        <p class="stats-lede" data-field="stats_lede">三十年整復手藝的傳承——承繼百年整復文化，累積上萬人次的身體經驗。</p>
         <div class="stat">
           <span class="stat-num"><span data-count="30" data-field="stat_1_value">0</span></span>
-          <span class="stat-label" data-field="stat_1_label">年整復推拿經驗</span>
+          <span class="stat-label" data-field="stat_1_label">年・手藝傳承</span>
         </div>
         <div class="stat">
-          <span class="stat-num"><span data-count="3" data-field="stat_2_value">0</span></span>
-          <span class="stat-label" data-field="stat_2_label">位專業整復師</span>
+          <span class="stat-num"><span data-count="100" data-field="stat_2_value">0</span></span>
+          <span class="stat-label" data-field="stat_2_label">年・整復文化底蘊</span>
         </div>
         <div class="stat">
-          <span class="stat-num"><span data-count="600" data-suffix="+" data-field="stat_3_value">0</span></span>
-          <span class="stat-label" data-field="stat_3_label">場服務案例</span>
+          <span class="stat-num"><span data-count="10000" data-suffix="+" data-field="stat_3_value">0</span></span>
+          <span class="stat-label" data-field="stat_3_label">人次・調理經驗</span>
         </div>
       </div>
     </div>
@@ -346,8 +347,6 @@
             <h3 data-field="plan_name">全身按摩</h3>
             <p class="plan-for" data-field="plan_for">適合全身放鬆、舒緩疲勞</p>
           </header>
-          <!-- ◆ 後台欄位：plan_quote — 方案補充短文（可留空刪除整段 <p>） -->
-          <p class="plan-quote" data-field="plan_quote">在這個匆忙的城市中，讓我們停下腳步，將疲憊轉化為輕盈，將壓力轉化為寧靜。</p>
           <div class="plan-price">
             <span class="price" data-field="plan_price">NT$1800–2200</span>
             <span class="price-note" data-field="plan_duration">90 分鐘</span>
