@@ -3,22 +3,47 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>青嵩工坊 · 中西式運動整復推拿中心 | 高雄運動按摩推薦、運動表現提升</title>
-<meta name="description" content="青嵩工坊·中西式運動整復推拿中心,位於高雄市新興區,傳承中式整復推拿三十年經驗,結合運動按摩、動作控制訓練,協助舒緩疲勞、提升運動表現、恢復活力。">
+
+<!-- ════════════════════════════════════════════════════════════════
+     青嵩工坊 QS STUDIO — 前台模板（對接 /api/content 後台版）
+     ────────────────────────────────────────────────────────────────
+     【架構說明 — 沿用你現有的前後台分離方式】
+
+     ・外殼（不需後台）：<header>、手機選單、<footer>、
+       styles.css、script.js —— 上傳一次即可。
+     ・內容：id 為 site-content 的 main 區塊。
+       script.js 會向 /api/content 取資料，
+       若後台回傳 { html: "..." } 就覆蓋此處內容；
+       若後台沒資料或離線，則顯示本檔內建的預設內容。
+
+     【重要】改版後請把 id 為 site-content 的 main 區塊內的新版 HTML
+     同步更新進後台（取代舊 class 結構），否則後台吐出的舊版
+     HTML 會套不到新樣式。
+
+     【欄位標記】
+     ・註解形式：「◆ 後台欄位：欄位名稱 — 說明」的單行註解
+     ・屬性形式：data-field="欄位名稱"
+     ・可重複區塊：data-repeatable="..."（每新增一筆複製一段）
+     ・圖片只換 src，class 與結構請勿更動。
+     ════════════════════════════════════════════════════════════════ -->
+
+<title>青嵩工坊 QS STUDIO — 中西式運動整復推拿｜高雄新興區</title>
+<meta name="description" content="青嵩工坊結合中式整復推拿與美式脊骨手法，為久坐辦公與運動愛好者釋放深層緊繃。高雄新興區，健康的大腦源於健康的身體。">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="青嵩工坊 qs studio">
-<meta property="og:title" content="青嵩工坊 · 中西式運動整復推拿中心">
-<meta property="og:description" content="高雄新興區在地經營,傳承三十年整復推拿手藝,結合運動按摩與動作控制訓練,協助舒緩疲勞、提升運動表現。">
+<meta property="og:title" content="青嵩工坊 QS STUDIO — 中西式運動整復推拿">
+<meta property="og:description" content="高雄新興區在地經營，傳承三十年整復推拿手藝，結合運動按摩與動作控制訓練，協助舒緩疲勞、提升運動表現。">
 <meta property="og:image" content="https://qsqingshan.com/images/treatment-scene.jpg">
 <meta property="og:url" content="https://qsqingshan.com">
 <meta property="og:locale" content="zh_TW">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="青嵩工坊 · 中西式運動整復推拿中心">
-<meta name="twitter:description" content="高雄新興區在地經營,傳承三十年整復推拿手藝,結合運動按摩與動作控制訓練,協助舒緩疲勞、提升運動表現。">
+<meta name="twitter:title" content="青嵩工坊 QS STUDIO — 中西式運動整復推拿">
+<meta name="twitter:description" content="高雄新興區在地經營，傳承三十年整復推拿手藝，結合運動按摩與動作控制訓練。">
 <meta name="twitter:image" content="https://qsqingshan.com/images/treatment-scene.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101312'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23f6f6f4' stroke-width='1.5'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -60,113 +85,250 @@
 </head>
 <body>
 
-<header>
-  <nav>
-    <a href="#top" class="brand">青嵩工坊<span>QINGSHAN · 高雄新興區</span></a>
-    <div class="nav-links" id="navLinks">
-      <a href="#about">調理理念</a>
-      <a href="#team">整復師</a>
-      <a href="#services">收費方案</a>
-      <a href="#contact">聯絡我們</a>
-      <a href="https://lin.ee/89dvdlm" class="cta-btn" style="display:inline-block;">預約體驗</a>
-    </div>
-    <button class="nav-toggle" id="navToggle" aria-label="開啟選單">☰</button>
-  </nav>
+<!-- ============ HEADER（外殼，不需後台） ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="#top" class="brand" aria-label="青嵩工坊首頁">
+      <span class="brand-zh">青嵩工坊</span>
+      <span class="brand-en">QS&nbsp;STUDIO</span>
+    </a>
+    <nav class="main-nav" aria-label="主選單">
+      <a href="#philosophy"><span class="nav-idx">01</span>調理理念</a>
+      <a href="#team"><span class="nav-idx">02</span>整復師</a>
+      <a href="#plans"><span class="nav-idx">03</span>收費方案</a>
+      <a href="#faq"><span class="nav-idx">04</span>常見問題</a>
+      <a href="#contact"><span class="nav-idx">05</span>聯絡我們</a>
+    </nav>
+    <!-- 預約體驗統一導向 LINE 預約 -->
+    <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill btn-pill--sm header-cta">預約體驗<span class="arrow">↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
 </header>
 
+<!-- 手機版全屏選單（外殼） -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <nav class="mobile-nav">
+    <a href="#philosophy"><em>01</em>調理理念</a>
+    <a href="#team"><em>02</em>整復師</a>
+    <a href="#plans"><em>03</em>收費方案</a>
+    <a href="#faq"><em>04</em>常見問題</a>
+    <a href="#contact"><em>05</em>聯絡我們</a>
+  </nav>
+  <div class="mobile-menu-foot">
+    <p>高雄市新興區林森一路 242 號 1 樓</p>
+    <p><a href="tel:+886912641105">0912-641-105</a></p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════════════════════════
+     後台內容區：/api/content 回傳的 html 會覆蓋此 <main> 內容
+     ════════════════════════════════════════════════════════════ -->
 <main id="site-content">
-<section class="hero" id="top">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">高雄 · 新興區 · 中西式運動整復推拿</span>
-      <h1>放鬆，是重新校準身體的起點。</h1>
-      <p class="lead">青嵩工坊結合中式整復推拿與美式脊骨手法,為久坐辦公與運動愛好者釋放深層緊繃,並透過動作控制訓練,讓身體的靈活與活力真正被留住。</p>
-      <div class="hero-ctas">
-        <a href="https://lin.ee/89dvdlm" class="cta-btn">預約體驗</a>
-        <a href="#about" class="btn-secondary">了解調理理念</a>
-      </div>
-      <div class="stat-row">
-        <div class="stat-item"><span class="stat-num mono" data-count="30">0</span><span class="stat-label">年整復推拿經驗</span></div>
-        <div class="stat-item"><span class="stat-num mono" data-count="3">0</span><span class="stat-label">位專業整復師</span></div>
-        <div class="stat-item"><span class="stat-num mono" data-count="600" data-suffix="+">0</span><span class="stat-label">場服務案例</span></div>
-      </div>
-    </div>
-    <div class="hero-art crosshair">
-      <img src="images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行運動按摩" loading="eager">
-    </div>
-  </div>
-</section>
 
-<section class="block" id="about">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">調理理念</span>
-      <h2>放鬆只是開始，訓練才是關鍵</h2>
-      <p>肌肉放鬆、關節鬆動能讓身體立刻感到輕盈——但這只是短期的舒緩。青嵩工坊在調理之外,同樣重視動作控制訓練,讓身體的靈活度真正被留住。</p>
-    </div>
-    <div class="step-grid">
-      <div class="step-item">
-        <span class="step-num mono">01</span>
-        <h3>放鬆</h3>
-        <p>透過肌筋膜鬆動術與美式整復手法,釋放深層緊繃的肌肉與關節,快速找回身體的輕盈感。</p>
+  <!-- ============ HERO 首屏 ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <!-- ◆ 後台欄位：hero_meta_1 / hero_meta_2 / hero_meta_3 — 頂部三則等寬小字 -->
+      <div class="hero-meta reveal">
+        <span data-field="hero_meta_1">KAOHSIUNG · XINXING DIST.</span>
+        <span data-field="hero_meta_2">中西式運動整復推拿</span>
+        <span data-field="hero_meta_3">CHINESE TUI-NA × AMERICAN CHIROPRACTIC</span>
       </div>
-      <div class="step-item">
-        <span class="step-num mono">02</span>
-        <h3>訓練</h3>
-        <p>搭配動作控制訓練,重新建立正確的動作模式,讓放鬆的效果延續,而不是很快又緊繃回來。</p>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="block" id="team">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">團隊介紹</span>
-      <h2>整復師推薦</h2>
-    </div>
-    <div class="team-grid" data-repeatable="team-card">
-      <div class="team-card"><img src="images/team-chenqingshan.jpg" alt="陳青杉"></div>
-      <div class="team-card"><img src="images/team-changjunwei.jpg" alt="常鈞崴"></div>
-      <div class="team-card"><img src="images/team-member3.jpg" alt="團隊成員"></div>
-      <!-- 要新增成員,複製一整段 <div class="team-card">...</div>,貼在這裡就會自動排進版面 -->
-    </div>
-  </div>
-</section>
-
-<section class="block" id="services">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">收費方案</span>
-      <h2>結合中西手法的整復服務</h2>
-      <p>依調理部位與方式分成三種方案,價格與內含項目一次看清楚。</p>
-    </div>
-    <div class="plan-grid">
-      <div class="plan-card">
-        <div class="plan-head">
-          <h3>附肢骨調理</h3>
-          <div class="plan-for">適合肩、肘、腕、髖、膝、踝部調理</div>
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <!-- ◆ 後台欄位：hero_title_1 / hero_title_2 — 主標兩行
+               注意：<i class="dot-accent"> 包住要做「藍青漸層底線」的詞，請保留 -->
+          <h1 class="hero-title">
+            <span class="line reveal" data-field="hero_title_1">健康的大腦，</span>
+            <span class="line reveal" data-field="hero_title_2">源於健康的<i class="dot-accent">身體</i>。</span>
+          </h1>
+          <!-- ◆ 後台欄位：hero_lede — 主標下說明段 -->
+          <p class="hero-lede reveal" data-field="hero_lede">
+            放鬆，是重新校準身體的起點。青嵩工坊結合中式整復推拿與美式脊骨手法，為久坐辦公與運動愛好者釋放深層緊繃——並透過動作控制訓練，讓身體的靈活與活力真正被留住。
+          </p>
+          <div class="hero-actions reveal">
+            <!-- ◆ 後台欄位：booking_url — LINE 預約連結（所有「預約體驗」按鈕共用） -->
+            <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill" data-field="booking_url">預約體驗<span class="arrow">↗</span></a>
+            <a href="#philosophy" class="link-underline">了解調理理念</a>
+          </div>
         </div>
-        <div class="plan-body">
-          <div class="plan-price"><span class="num mono">NT$600–1800</span><span class="unit">20–30分鐘起,以部位計價</span></div>
-          <ul class="plan-list">
+        <!-- ◆ 後台欄位：hero_image（建議直向 4:5）/ hero_image_cap（圖說小字） -->
+        <figure class="hero-figure reveal">
+          <img src="images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行運動按摩" loading="eager" data-field="hero_image">
+          <figcaption class="mono-cap" data-field="hero_image_cap">FIG.01 — TREATMENT SCENE</figcaption>
+        </figure>
+      </div>
+
+      <!-- ◆ 後台欄位：stat_1~3_value + stat_1~3_label
+           注意：數值填 data-count（純數字）；後綴如 "+" 填 data-suffix（可省略） -->
+      <div class="stats reveal" id="stats">
+        <div class="stat">
+          <span class="stat-num"><span data-count="30" data-field="stat_1_value">0</span></span>
+          <span class="stat-label" data-field="stat_1_label">年整復推拿經驗</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num"><span data-count="3" data-field="stat_2_value">0</span></span>
+          <span class="stat-label" data-field="stat_2_label">位專業整復師</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num"><span data-count="600" data-suffix="+" data-field="stat_3_value">0</span></span>
+          <span class="stat-label" data-field="stat_3_label">場服務案例</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 跑馬燈（裝飾；◆ 後台欄位：marquee_text） ============ -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <!-- 注意：兩段 <span> 內容必須完全相同（無縫循環用） -->
+      <span data-field="marquee_text">QINGSHAN STUDIO<i>◆</i>放鬆 · 校準 · 訓練<i>◆</i>TUI-NA × CHIROPRACTIC<i>◆</i>高雄新興區<i>◆</i></span>
+      <span aria-hidden="true">QINGSHAN STUDIO<i>◆</i>放鬆 · 校準 · 訓練<i>◆</i>TUI-NA × CHIROPRACTIC<i>◆</i>高雄新興區<i>◆</i></span>
+    </div>
+  </div>
+
+  <!-- ============ 調理理念 ============ -->
+  <section class="block" id="philosophy">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">PHILOSOPHY — 調理理念</span>
+        <span class="tag-rule"></span>
+      </div>
+
+      <div class="statement-grid">
+        <!-- ◆ 後台欄位：philosophy_title（<br> 為換行，請保留）/ philosophy_note -->
+        <h2 class="statement reveal" data-field="philosophy_title">放鬆只是開始，<br>訓練才是關鍵。</h2>
+        <p class="statement-note reveal" data-field="philosophy_note">
+          肌肉放鬆、關節鬆動能讓身體立刻感到輕盈——但這只是短期的舒緩。青嵩工坊在調理之外，同樣重視動作控制訓練，讓身體的靈活度真正被留住。
+        </p>
+      </div>
+
+      <div class="principles">
+        <!-- ◆ 後台欄位：principle_1_title / principle_1_en / principle_1_desc -->
+        <article class="principle reveal">
+          <span class="principle-idx">01</span>
+          <div class="principle-body">
+            <h3><span data-field="principle_1_title">放鬆</span><span class="principle-en" data-field="principle_1_en">RELEASE</span></h3>
+            <p data-field="principle_1_desc">透過肌筋膜鬆動術與美式整復手法，釋放深層緊繃的肌肉與關節，快速找回身體的輕盈感。</p>
+          </div>
+        </article>
+        <!-- ◆ 後台欄位：principle_2_title / principle_2_en / principle_2_desc / principle_2_image -->
+        <article class="principle reveal">
+          <span class="principle-idx">02</span>
+          <div class="principle-body">
+            <h3><span data-field="principle_2_title">訓練</span><span class="principle-en" data-field="principle_2_en">RETRAIN</span></h3>
+            <p data-field="principle_2_desc">搭配動作控制訓練，重新建立正確的動作模式，讓放鬆的效果延續，而不是很快又緊繃回來。</p>
+          </div>
+          <figure class="principle-figure">
+            <img src="images/movement-training.jpg" alt="青嵩工坊團隊進行動作評估訓練" loading="lazy" data-field="principle_2_image">
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 整復師團隊 ============ -->
+  <section class="block" id="team">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">TEAM — 整復師</span>
+        <span class="tag-rule"></span>
+      </div>
+      <h2 class="block-title reveal" data-field="team_title">整復師推薦</h2>
+
+      <div class="team-grid" data-repeatable="member">
+        <!-- ◆◆ 可重複區塊：member（容器上有 data-repeatable 標記）
+             每新增一位整復師，複製整個 <article class="member"> 區塊。
+             欄位：member_name / member_role / member_photo（建議直向 3:4） -->
+        <article class="member reveal">
+          <figure class="member-photo">
+            <img src="images/team-chenqingshan.jpg" alt="整復師 陳青杉" loading="lazy" data-field="member_photo">
+          </figure>
+          <div class="member-info">
+            <h3 data-field="member_name">陳青杉</h3>
+            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT THERAPIST</span>
+          </div>
+        </article>
+
+        <article class="member reveal">
+          <figure class="member-photo">
+            <img src="images/team-changjunwei.jpg" alt="整復師 常鈞崴" loading="lazy" data-field="member_photo">
+          </figure>
+          <div class="member-info">
+            <h3 data-field="member_name">常鈞崴</h3>
+            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT THERAPIST</span>
+          </div>
+        </article>
+
+        <article class="member reveal">
+          <figure class="member-photo">
+            <img src="images/team-member3.jpg" alt="青嵩工坊團隊成員" loading="lazy" data-field="member_photo">
+          </figure>
+          <div class="member-info">
+            <h3 data-field="member_name">青嵩團隊</h3>
+            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT THERAPIST</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 收費方案 ============ -->
+  <section class="block" id="plans">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">PLANS — 收費方案</span>
+        <span class="tag-rule"></span>
+      </div>
+      <div class="statement-grid">
+        <!-- ◆ 後台欄位：plans_title / plans_note -->
+        <h2 class="block-title reveal" data-field="plans_title">結合中西手法的<br>整復服務</h2>
+        <p class="statement-note reveal" data-field="plans_note">依調理部位與方式分成三種方案，價格與內含項目一次看清楚。</p>
+      </div>
+
+      <div class="plans" data-repeatable="plan">
+        <!-- ◆◆ 可重複區塊：plan（容器上有 data-repeatable 標記）
+             每新增一種方案，複製整個 <article class="plan"> 區塊。
+             欄位：plan_name / plan_for / plan_price / plan_duration
+                  / plan_items（每項一個 <li>）/ plan_addon（加購說明）
+             注意：plan-idx 的 01/02/03 依筆數順序編號 -->
+        <article class="plan reveal">
+          <header class="plan-head">
+            <span class="plan-idx">01</span>
+            <h3 data-field="plan_name">附肢骨調理</h3>
+            <p class="plan-for" data-field="plan_for">適合肩、肘、腕、髖、膝、踝部調理</p>
+          </header>
+          <div class="plan-price">
+            <span class="price" data-field="plan_price">NT$600–1800</span>
+            <span class="price-note" data-field="plan_duration">20–30 分鐘起 · 以部位計價</span>
+          </div>
+          <ul class="plan-list" data-field="plan_items">
             <li>物理評估</li>
             <li>美式整復</li>
             <li>肌筋膜鬆動術</li>
             <li>動作控制</li>
             <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <div class="plan-note">第二部位(例如左肩+右肩)加購價 300元/部位</div>
-        </div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-head">
-          <h3>中軸骨調理</h3>
-          <div class="plan-for">適合頸、胸、腰、臀部(骨盆)調理</div>
-        </div>
-        <div class="plan-body">
-          <div class="plan-price"><span class="num mono">NT$1200–1800</span><span class="unit">60分鐘起</span></div>
-          <ul class="plan-list">
+          <p class="plan-addon" data-field="plan_addon">加購 — 第二部位（例如左肩＋右肩）300 元／部位</p>
+        </article>
+
+        <article class="plan reveal">
+          <header class="plan-head">
+            <span class="plan-idx">02</span>
+            <h3 data-field="plan_name">中軸骨調理</h3>
+            <p class="plan-for" data-field="plan_for">適合頸、胸、腰、臀部（骨盆）調理</p>
+          </header>
+          <div class="plan-price">
+            <span class="price" data-field="plan_price">NT$1200–1800</span>
+            <span class="price-note" data-field="plan_duration">60 分鐘起</span>
+          </div>
+          <ul class="plan-list" data-field="plan_items">
             <li>物理評估</li>
             <li>美式整復</li>
             <li>肌筋膜鬆動術</li>
@@ -175,131 +337,156 @@
             <li>動作控制</li>
             <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <div class="plan-note">搭配附肢骨調理(例如肩+頸、腰+髖)加購價 300元/20分</div>
-        </div>
-      </div>
-      <div class="plan-card">
-        <div class="plan-head">
-          <h3>全身按摩</h3>
-          <div class="plan-for">適合全身放鬆、舒緩疲勞</div>
-        </div>
-        <div class="plan-body">
-          <p class="plan-quote">在這個匆忙的城市中,讓我們停下腳步,將疲憊轉化為輕盈,將壓力轉化為寧靜,讓我們徜徉在這份身心的溫柔之中。</p>
-          <div class="plan-price"><span class="num mono">NT$1800–2200</span><span class="unit">90分鐘</span></div>
-          <ul class="plan-list">
+          <p class="plan-addon" data-field="plan_addon">加購 — 搭配附肢骨調理（例如肩＋頸、腰＋髖）300 元／20 分</p>
+        </article>
+
+        <article class="plan reveal">
+          <header class="plan-head">
+            <span class="plan-idx">03</span>
+            <h3 data-field="plan_name">全身按摩</h3>
+            <p class="plan-for" data-field="plan_for">適合全身放鬆、舒緩疲勞</p>
+          </header>
+          <!-- ◆ 後台欄位：plan_quote — 方案補充短文（可留空刪除整段 <p>） -->
+          <p class="plan-quote" data-field="plan_quote">在這個匆忙的城市中，讓我們停下腳步，將疲憊轉化為輕盈，將壓力轉化為寧靜。</p>
+          <div class="plan-price">
+            <span class="price" data-field="plan_price">NT$1800–2200</span>
+            <span class="price-note" data-field="plan_duration">90 分鐘</span>
+          </div>
+          <ul class="plan-list" data-field="plan_items">
             <li>物理評估</li>
             <li>深層按摩槍</li>
             <li>肌筋膜鬆動術</li>
             <li>紅外線拔罐器</li>
             <li>草藥膏或肌內效貼紮</li>
           </ul>
-          <div class="plan-note">搭配美式整復加購價 400元</div>
+          <p class="plan-addon" data-field="plan_addon">加購 — 搭配美式整復 400 元</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 常見問題 ============ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">FAQ — 初次到訪</span>
+        <span class="tag-rule"></span>
+      </div>
+      <!-- ◆ 後台欄位：faq_title / faq_sub -->
+      <h2 class="block-title reveal" data-field="faq_title">來之前，你可能想知道的事</h2>
+      <p class="block-sub reveal" data-field="faq_sub">不只是運動員——久坐、姿勢不良造成的肌肉緊繃，也是我們每天在處理的日常。</p>
+
+      <div class="accordion" id="accordion" data-repeatable="acc-item">
+        <!-- ◆◆ 可重複區塊：acc-item（容器上有 data-repeatable 標記）
+             每新增一則問答，複製整個 <div class="acc-item"> 區塊。
+             欄位：faq_q / faq_a；acc-idx 的 Q1~Q4 依筆數編號 -->
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q1</span>
+            <span class="acc-q" data-field="faq_q">整天坐辦公室、肩頸僵硬也可以來嗎？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p data-field="faq_a">可以。除了提升運動表現，久坐、姿勢不良造成的肌肉緊繃，也是我們平常最常處理的狀況之一。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q2</span>
+            <span class="acc-q" data-field="faq_q">調理前需要空腹嗎？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p data-field="faq_a">不用刻意空腹，建議調理前 1～2 小時進食到 6～7 分飽即可，太餓或太飽都不建議。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q3</span>
+            <span class="acc-q" data-field="faq_q">調理後多久可以恢復正常活動？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p data-field="faq_a">建議先降到平常強度的 3 成左右（例如原本跑步 100 分鐘先降到 30 分鐘），觀察沒有不適後再逐步恢復。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q4</span>
+            <span class="acc-q" data-field="faq_q">多久該回來調理一次？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p data-field="faq_a">可依身體疲勞感（1～10 分）抓頻率：1～3 分約一個月一次，4～6 分約 2～3 週一次，7～9 分建議每週 1～2 次。</p>
+          </div>
         </div>
       </div>
     </div>
-    <div style="margin-top:1px;">
-      <img src="images/movement-training.jpg" alt="青嵩工坊團隊進行動作評估訓練" style="width:100%; display:block;">
-    </div>
-  </div>
-</section>
+  </section>
 
-<section class="block">
-  <div class="wrap">
-    <div class="section-head">
-      <span class="eyebrow">初次到訪</span>
-      <h2>來之前，你可能想知道的事</h2>
-      <p>不只是運動員——久坐、姿勢不良造成的肌肉緊繃,也是我們每天在處理的日常。</p>
-    </div>
-    <div class="qa-list">
-      <div class="qa-item">
-        <div class="q">整天坐辦公室、肩頸僵硬也可以來嗎?</div>
-        <div class="a">可以。除了提升運動表現,久坐、姿勢不良造成的肌肉緊繃,也是我們平常最常處理的狀況之一。</div>
+  <!-- ============ 聯絡我們（深色反轉區） ============ -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="tagline tagline--dark reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">CONTACT — 聯絡我們</span>
+        <span class="tag-rule"></span>
       </div>
-      <div class="qa-item">
-        <div class="q">調理前需要空腹嗎?</div>
-        <div class="a">不用刻意空腹,建議調理前1~2小時進食到6~7分飽即可,太餓或太飽都不建議。</div>
-      </div>
-      <div class="qa-item">
-        <div class="q">調理後多久可以恢復正常活動?</div>
-        <div class="a">建議先降到平常強度的3成左右(例如原本跑步100分鐘先降到30分鐘),觀察沒有不適後再逐步恢復。</div>
-      </div>
-      <div class="qa-item">
-        <div class="q">多久該回來調理一次?</div>
-        <div class="a">可依身體疲勞感(1~10分)抓頻率:1~3分約一個月一次,4~6分約2~3週一次,7~9分建議每週1~2次。</div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<section class="contact" id="contact">
-  <div class="wrap">
-    <div>
-      <span class="eyebrow">聯絡我們</span>
-      <h2>歡迎預約體驗</h2>
-      <div class="contact-item"><span class="label mono">電話</span><a href="tel:0912641105" class="mono">0912-641-105</a></div>
-      <div class="contact-item"><span class="label mono">地址</span><span>高雄市新興區林森一路242號1樓</span></div>
-      <div class="contact-item"><span class="label mono">營業</span><span>週一至週日 11:30–20:30(最後預約)<br>特約時段 09:00–11:00</span></div>
-      <div class="social-row">
-        <a href="https://www.facebook.com/qingsongstudio/" aria-label="Facebook">FB</a>
-        <a href="https://lin.ee/biKerHf" aria-label="LINE">LINE</a>
-        <a href="https://www.instagram.com/qs_studio_/" aria-label="Instagram">IG</a>
-        <a href="mailto:qs.studio03@gmail.com" aria-label="Email">MAIL</a>
+      <!-- ◆ 後台欄位：contact_title -->
+      <h2 class="contact-title reveal" data-field="contact_title">歡迎預約體驗</h2>
+      <!-- ◆ 後台欄位：contact_phone（顯示文字）
+           注意：href="tel:+886..." 為撥號連結，改號碼時兩處都要更新 -->
+      <a class="contact-phone reveal" href="tel:+886912641105" data-field="contact_phone">0912-641-105</a>
+
+      <div class="contact-grid reveal">
+        <div class="contact-cell">
+          <span class="contact-label">地址 — ADDRESS</span>
+          <p data-field="contact_address">高雄市新興區林森一路 242 號 1 樓</p>
+        </div>
+        <div class="contact-cell">
+          <span class="contact-label">營業 — HOURS</span>
+          <!-- ◆ 後台欄位：contact_hours（<br> 為換行，請保留） -->
+          <p data-field="contact_hours">週一至週日 11:30–20:30（最後預約）<br>特約時段 09:00–11:00</p>
+        </div>
+        <div class="contact-cell">
+          <span class="contact-label">社群 — SOCIAL</span>
+          <!-- ◆ 後台欄位：social_fb / social_line / social_ig / social_mail
+               只需替換各 <a> 的 href -->
+          <p class="social-links">
+            <a href="https://www.facebook.com/qingsongstudio/" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_fb">FB</a>
+            <a href="https://lin.ee/biKerHf" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_line">LINE</a>
+            <a href="https://www.instagram.com/qs_studio_/" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_ig">IG</a>
+            <a href="mailto:qs.studio03@gmail.com" class="link-underline link-underline--dark" data-field="social_mail">MAIL</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-cta reveal">
+        <!-- ◆ 後台欄位：booking_url — 與首屏同一個 LINE 預約連結 -->
+        <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill btn-pill--light" data-field="booking_url">立即預約<span class="arrow">↗</span></a>
+      </div>
+
+      <!-- ◆ 後台欄位：contact_map — Google Maps 嵌入網址（只換 src） -->
+      <div class="contact-map reveal" data-field="contact_map">
+        <iframe src="https://www.google.com/maps?q=高雄市新興區林森一路242號&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="青嵩工坊位置地圖"></iframe>
       </div>
     </div>
-    <div class="map-frame">
-      <iframe src="https://www.google.com/maps?q=高雄市新興區林森一路242號&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  青嵩傳統整復推拿 ・ 統編:91522632 ・ 本中心非醫療院所,不提供任何醫療行為<br>
-  青嵩工坊 qs studio 版權所有 © 2023–2026 All Rights Reserved.
-</footer>
 </main>
+<!-- ══════════════ 後台內容區結束 ══════════════ -->
 
-<script>
-  document.getElementById('navToggle').addEventListener('click', function(){
-    document.getElementById('navLinks').classList.toggle('open');
-  });
-</script>
-<script>
-  fetch('/api/content').then(function(r){ return r.ok ? r.json() : null; }).then(function(data){
-    if (data && data.html) {
-      document.getElementById('site-content').innerHTML = data.html;
-    }
-    runStatCount();
-  }).catch(function(){ runStatCount(); });
+<!-- ============ 頁尾（外殼） ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>青嵩傳統整復推拿 ・ 統編：91522632</span>
+    <span>本中心非醫療院所，不提供任何醫療行為</span>
+    <span>© 2023–2026 青嵩工坊 QS STUDIO</span>
+  </div>
+</footer>
 
-  function runStatCount(){
-    var els = document.querySelectorAll('.stat-num[data-count]');
-    if (!els.length) return;
-    var seen = false;
-    function animate(el){
-      var target = parseInt(el.getAttribute('data-count'), 10);
-      var suffix = el.getAttribute('data-suffix') || '';
-      var start = null;
-      var duration = 900;
-      function step(ts){
-        if (!start) start = ts;
-        var progress = Math.min((ts - start) / duration, 1);
-        el.textContent = Math.floor(progress * target) + suffix;
-        if (progress < 1) requestAnimationFrame(step);
-        else el.textContent = target + suffix;
-      }
-      requestAnimationFrame(step);
-    }
-    var observer = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry){
-        if (entry.isIntersecting && !seen){
-          seen = true;
-          els.forEach(animate);
-          observer.disconnect();
-        }
-      });
-    }, {threshold:0.4});
-    observer.observe(els[0]);
-  }
-</script>
+<script src="script.js"></script>
 </body>
 </html>
