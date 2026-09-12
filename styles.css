@@ -344,8 +344,24 @@ body.menu-open .mobile-nav a:nth-child(5) { transition-delay: .43s; }
   margin-top: clamp(72px, 10vw, 128px);
   border-top: 1px solid var(--line);
 }
+.stats-lede {
+  grid-column: 1 / -1;
+  padding-top: 26px;
+  font-family: var(--mono);
+  font-size: 12.5px;
+  letter-spacing: .1em;
+  line-height: 2;
+  color: var(--ink-2);
+}
+.stats-lede::before {
+  content: "◆";
+  color: var(--blue);
+  margin-right: 12px;
+  font-size: 9px;
+  vertical-align: 2px;
+}
 .stat {
-  padding: 32px 28px 36px 0;
+  padding: 26px 28px 36px 0;
   border-right: 1px solid var(--line);
   display: flex;
   flex-direction: column;
@@ -634,13 +650,6 @@ body.menu-open .mobile-nav a:nth-child(5) { transition-delay: .43s; }
   font-family: var(--mono);
   font-size: 12px;
   color: var(--blue);
-}
-.plan-quote {
-  margin-bottom: 24px;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 1.9;
-  color: var(--ink-3);
 }
 .plan-addon {
   margin-top: 24px;
