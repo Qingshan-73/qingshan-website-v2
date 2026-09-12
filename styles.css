@@ -328,7 +328,7 @@ body.menu-open .mobile-nav a:nth-child(5) { transition-delay: .43s; }
   filter: grayscale(1) contrast(1.04);
   transition: filter .8s var(--ease), transform .8s var(--ease);
 }
-.hero-figure:hover img { filter: grayscale(0) contrast(1); }
+.hero-figure.in img { filter: grayscale(0) contrast(1); }
 .mono-cap {
   margin-top: 12px;
   font-family: var(--mono);
@@ -542,7 +542,8 @@ body.menu-open .mobile-nav a:nth-child(5) { transition-delay: .43s; }
   filter: grayscale(1) contrast(1.04);
   transition: filter .8s var(--ease), transform 1.2s var(--ease);
 }
-.principle:hover .principle-figure img { filter: grayscale(0); transform: scale(1.04); }
+.principle.in .principle-figure img { filter: grayscale(0); }
+.principle:hover .principle-figure img { transform: scale(1.04); }
 
 /* ============================================================
    TEAM
@@ -560,7 +561,8 @@ body.menu-open .mobile-nav a:nth-child(5) { transition-delay: .43s; }
   filter: grayscale(1) contrast(1.05);
   transition: filter .8s var(--ease), transform 1.2s var(--ease);
 }
-.member:hover .member-photo img { filter: grayscale(0); transform: scale(1.045); }
+.member.in .member-photo img { filter: grayscale(0); }
+.member:hover .member-photo img { transform: scale(1.045); }
 .member-info {
   display: flex;
   align-items: baseline;
