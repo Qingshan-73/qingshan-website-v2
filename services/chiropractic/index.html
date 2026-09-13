@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<!-- ════════════════════════════════════════════════════════════════
+     青嵩工坊 QS STUDIO — 服務頁：美式整復・中軸骨調理
+     URL：https://qsqingshan.com/services/chiropractic/
+
+     【說明】
+     ・本頁為靜態頁面，未接後台（不使用 id="site-content"，
+       避免 /api/content 覆寫本頁內容）；script.js 僅提供
+       進場動畫與 FAQ 手風琴互動。
+     ・所有資源使用根目錄絕對路徑（/styles.css、/images/...），
+       在子資料夾下也能正確載入。
+     ════════════════════════════════════════════════════════════════ -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>美式整復｜頸胸腰骨盆調理・60 分鐘 NT$1,200 起 — 高雄新興區｜青嵩工坊</title>
+<meta name="description" content="青嵩工坊美式整復（中軸骨調理）：物理評估＋美式脊骨手法＋肌筋膜鬆動術，針對頸、胸、腰、臀骨盆的 60 分鐘深度調理，NT$1,200 起。高雄新興區林森一路，LINE 預約。">
+<link rel="canonical" href="https://qsqingshan.com/services/chiropractic/" />
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青嵩工坊 qs studio">
+<meta property="og:title" content="美式整復｜頸胸腰骨盆調理 — 高雄新興區｜青嵩工坊">
+<meta property="og:description" content="物理評估＋美式脊骨手法＋肌筋膜鬆動術，60 分鐘中軸骨深度調理，NT$1,200 起。高雄新興區，歡迎 LINE 預約。">
+<meta property="og:image" content="https://qsqingshan.com/images/treatment-scene.jpg">
+<meta property="og:url" content="https://qsqingshan.com/services/chiropractic/">
+<meta property="og:locale" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="美式整復｜頸胸腰骨盆調理 — 高雄新興區｜青嵩工坊">
+<meta name="twitter:description" content="物理評估＋美式脊骨手法＋肌筋膜鬆動術，60 分鐘中軸骨深度調理，NT$1,200 起。">
+<meta name="twitter:image" content="https://qsqingshan.com/images/treatment-scene.jpg">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23101312'/%3E%3Ccircle cx='16' cy='16' r='6' fill='none' stroke='%23f6f6f4' stroke-width='1.5'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  /* 本頁專用的小元件（全站 styles.css 之外的少量補充） */
+  .breadcrumb{font-family:'IBM Plex Mono',monospace;font-size:.72rem;letter-spacing:.08em;color:#8a8a86;padding:1.2rem 0 .5rem}
+  .breadcrumb a{color:inherit;text-decoration:none;border-bottom:1px solid transparent;transition:border-color .2s}
+  .breadcrumb a:hover{border-bottom-color:#8a8a86}
+  .breadcrumb .sep{margin:0 .55em;color:#c8c8c4}
+  .breadcrumb [aria-current]{color:#101312}
+  .fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:#e7e7e3;border:1px solid #e7e7e3;margin-top:3rem}
+  .fit-cell{background:#f6f6f4;padding:1.8rem 1.8rem 1.6rem}
+  .fit-cell h3{font-size:1.05rem;font-weight:500;margin:0 0 .5rem;color:#101312}
+  .fit-cell p{margin:0;font-size:.92rem;line-height:1.75;color:#55554f}
+  .cross-link{margin-top:2.2rem;font-size:.95rem}
+  @media (max-width:720px){.fit-grid{grid-template-columns:1fr}}
+</style>
+
+<!-- 結構化資料 1：麵包屑 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "首頁", "item": "https://qsqingshan.com/" },
+    { "@type": "ListItem", "position": 2, "name": "服務方案", "item": "https://qsqingshan.com/#plans" },
+    { "@type": "ListItem", "position": 3, "name": "美式整復・中軸骨調理", "item": "https://qsqingshan.com/services/chiropractic/" }
+  ]
+}
+</script>
+
+<!-- 結構化資料 2：服務 -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "美式整復・中軸骨調理",
+  "serviceType": "美式整復（中軸骨調理）",
+  "description": "針對頸、胸、腰、臀部（骨盆）的 60 分鐘深度調理：物理評估、美式整復手法、肌筋膜鬆動術，搭配紅外線拔罐器與深層按摩槍，並以動作控制訓練延續效果。",
+  "url": "https://qsqingshan.com/services/chiropractic/",
+  "areaServed": { "@type": "City", "name": "高雄市" },
+  "provider": {
+    "@type": "HealthAndBeautyBusiness",
+    "name": "青嵩工坊 · 中西式運動整復推拿中心",
+    "url": "https://qsqingshan.com",
+    "telephone": "+886-912-641-105",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "林森一路242號1樓",
+      "addressLocality": "新興區",
+      "addressRegion": "高雄市",
+      "addressCountry": "TW"
+    }
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "TWD",
+    "price": "1200",
+    "description": "60 分鐘起 NT$1,200–1,800，依評估與調理內容調整"
+  }
+}
+</script>
+
+<!-- 結構化資料 3：本頁 FAQ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "美式整復會痛嗎？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "多數人在調理過程中只會感到關節鬆開的聲響與釋放感，並不是疼痛。整復師會先經過物理評估確認狀況，手法力道也會依每個人的身體回饋即時調整。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "美式整復跟傳統整復推拿有什麼不同？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "傳統整復推拿多以大面積的推、拿、按、揉放鬆軟組織；美式整復則以評估為核心，針對特定關節施以快速、精準、小幅度的調整手法。青嵩工坊的做法是兩者結合：先以美式整復校準關節，再用肌筋膜鬆動術處理周邊軟組織。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "什麼情況不適合做美式整復？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "若有骨折、急性扭挫傷紅腫熱痛、嚴重骨質疏鬆、孕期，或正在接受醫療處置，建議先就醫評估再考慮調理。青嵩工坊非醫療院所，調理前如對自身狀況有疑慮，歡迎先透過 LINE 與我們討論。"
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "第一次來需要準備什麼？",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "穿著寬鬆、方便活動的衣物即可，不用刻意空腹（建議調理前 1～2 小時進食到 6～7 分飽）。第一次會先做完整的物理評估與動作檢測，請預留約 60 分鐘。"
+      }
+    }
+  ]
+}
+</script>
+<base target="_blank">
+</head>
+
+<body>
+
+<!-- ============ HEADER（外殼，與首頁相同；連結改為回首頁的絕對路徑） ============ -->
+<header class="site-header" id="siteHeader">
+  <div class="header-inner">
+    <a href="/" class="brand" aria-label="青嵩工坊首頁">
+      <span class="brand-zh">青嵩工坊</span>
+      <span class="brand-en">QS&nbsp;STUDIO</span>
+    </a>
+    <nav class="main-nav" aria-label="主選單">
+      <a href="/#philosophy"><span class="nav-idx">01</span>調理理念</a>
+      <a href="/#team"><span class="nav-idx">02</span>整復師</a>
+      <a href="/#plans"><span class="nav-idx">03</span>收費方案</a>
+      <a href="/#faq"><span class="nav-idx">04</span>常見問題</a>
+      <a href="/#contact"><span class="nav-idx">05</span>聯絡我們</a>
+    </nav>
+    <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill btn-pill--sm header-cta">預約體驗<span class="arrow">↗</span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="開啟選單" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- 注意：本頁刻意不使用 id="site-content"，避免後台 /api/content 覆寫 -->
+<main>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap">
+      <nav class="breadcrumb" aria-label="麵包屑">
+        <a href="/">首頁</a><span class="sep">/</span><a href="/#plans">服務方案</a><span class="sep">/</span><span aria-current="page">美式整復・中軸骨調理</span>
+      </nav>
+      <div class="hero-meta reveal">
+        <span>SERVICE — 中軸骨調理</span>
+        <span>美式整復・高雄新興區</span>
+        <span>AXIAL ADJUSTMENT · 60 MIN</span>
+      </div>
+
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <h1 class="hero-title">
+            <span class="line reveal">美式整復，</span>
+            <span class="line reveal">讓身體的<i class="dot-accent">中軸</i>重新校準。</span>
+          </h1>
+          <p class="hero-lede reveal">
+            針對頸、胸、腰、臀（骨盆）的 60 分鐘深度調理——先以物理評估找到緊繃的根源，透過美式整復手法精準調整關節，再用肌筋膜鬆動術釋放周邊軟組織，最後以動作控制把效果留住。高雄新興區，NT$1,200 起。
+          </p>
+          <div class="hero-actions reveal">
+            <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill">預約體驗<span class="arrow">↗</span></a>
+            <a href="#process" class="link-underline">了解調理流程</a>
+          </div>
+        </div>
+        <figure class="hero-figure reveal">
+          <img src="/images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行美式整復中軸骨調理" loading="eager">
+          <figcaption class="mono-cap">FIG.01 — ADJUST・校準</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 什麼是美式整復 ============ -->
+  <section class="block" id="about">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">ABOUT — 什麼是美式整復</span>
+        <span class="tag-rule"></span>
+      </div>
+      <div class="statement-grid">
+        <h2 class="statement reveal">評估為先，<br>精準調整。</h2>
+        <p class="statement-note reveal">
+          美式整復源自美式脊骨手法，核心是「先評估、再調整」：整復師透過觸診與動作檢測，找出活動度受限的關節節段，施以快速、精準、小幅度的調整手法，幫助關節回到比較好的活動狀態。與大面積放鬆的傳統推拿相比，美式整復更聚焦在「特定的點」。
+        </p>
+      </div>
+
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="principle-idx">01</span>
+          <div class="principle-body">
+            <h3><span>評估</span><span class="principle-en">ASSESS</span></h3>
+            <p>每次調理從物理評估開始：姿勢觀察、觸診、關節活動度與動作模式檢測，確認問題的節段與方向，再決定調整策略——不是哪裡痠就按哪裡。</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">02</span>
+          <div class="principle-body">
+            <h3><span>調整</span><span class="principle-en">ADJUST</span></h3>
+            <p>以快速、低幅度的精準手法作用於目標關節，過程中常聽到關節鬆開的聲響——那是關節囊內氣泡釋放的物理現象，多數人感到的是釋放感而非疼痛。</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">03</span>
+          <div class="principle-body">
+            <h3><span>整合</span><span class="principle-en">INTEGRATE</span></h3>
+            <p>調整後搭配肌筋膜鬆動術處理周邊軟組織，並給予動作控制建議——關節動得了，還要讓身體學會怎麼用，效果才留得住。</p>
+          </div>
+          <figure class="principle-figure">
+            <img src="/images/movement-training.jpg" alt="青嵩工坊整復師帶領動作控制訓練" loading="lazy">
+          </figure>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 適合對象 ============ -->
+  <section class="block" id="for">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">FOR — 誰適合中軸骨調理</span>
+        <span class="tag-rule"></span>
+      </div>
+      <div class="statement-grid">
+        <h2 class="block-title reveal">不只是運動員——<br>久坐族更需要。</h2>
+        <p class="statement-note reveal">
+          中軸是身體的「主幹道」：頸、胸、腰、骨盆彼此連動，一處卡往常牽動全身。以下是我們每天在處理的常見狀況。
+        </p>
+      </div>
+
+      <div class="fit-grid reveal">
+        <div class="fit-cell">
+          <h3>久坐肩頸僵硬</h3>
+          <p>長時間盯螢幕，頸椎與上胸椎活動度下降，肩頸像背著一塊板子——有時還伴隨緊繃型的頭部不適。</p>
+        </div>
+        <div class="fit-cell">
+          <h3>腰背緊繃、彎不下去</h3>
+          <p>久坐下背僵硬、起身要「熱機」一下才直得起來，或彎腰、轉身時覺得卡卡的。</p>
+        </div>
+        <div class="fit-cell">
+          <h3>骨盆歪斜感・長短腳感</h3>
+          <p>褲頭一邊高一邊低、翹腳成癮、站久單側腰痠——骨盆與薦髂關節的活動度值得檢查。</p>
+        </div>
+        <div class="fit-cell">
+          <h3>運動表現卡卡</h3>
+          <p>深蹲下不去、轉體不順、左右活動度不對稱——胸椎與髖部的活動度往往是被忽略的關鍵。</p>
+        </div>
+      </div>
+      <p class="cross-link reveal">四肢的問題（肩、肘、腕、髖、膝、踝）則適合 <a href="/#plans" class="link-underline">附肢骨調理</a>；想全身放鬆可參考 <a href="/#plans" class="link-underline">90 分鐘全身按摩</a>。</p>
+    </div>
+  </section>
+
+  <!-- ============ 調理流程 ============ -->
+  <section class="block" id="process">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">PROCESS — 60 分鐘調理流程</span>
+        <span class="tag-rule"></span>
+      </div>
+      <div class="statement-grid">
+        <h2 class="block-title reveal">每一分鐘，<br>都有它的任務。</h2>
+        <p class="statement-note reveal">中軸骨調理 60 分鐘起，依評估結果與調理內容調整。以下是標準流程。</p>
+      </div>
+
+      <div class="principles">
+        <article class="principle reveal">
+          <span class="principle-idx">01</span>
+          <div class="principle-body">
+            <h3><span>物理評估</span><span class="principle-en">ASSESSMENT</span></h3>
+            <p>問診了解生活型態與困擾，搭配姿勢觀察、觸診與動作檢測，確認本次調理的目標節段。（第一次來會做得更完整）</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">02</span>
+          <div class="principle-body">
+            <h3><span>美式整復</span><span class="principle-en">ADJUSTMENT</span></h3>
+            <p>針對評估出的關節節段施以精準調整手法，恢復關節活動度。</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">03</span>
+          <div class="principle-body">
+            <h3><span>肌筋膜鬆動</span><span class="principle-en">MYOFASCIAL RELEASE</span></h3>
+            <p>處理關節周邊的緊繃軟組織，視情況搭配紅外線拔罐器與深層按摩槍加強。</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">04</span>
+          <div class="principle-body">
+            <h3><span>動作控制</span><span class="principle-en">MOVEMENT RETRAIN</span></h3>
+            <p>給予簡單的動作練習與日常姿勢建議，讓調理效果延續到下一次回訪之前。</p>
+          </div>
+        </article>
+        <article class="principle reveal">
+          <span class="principle-idx">05</span>
+          <div class="principle-body">
+            <h3><span>收尾照護</span><span class="principle-en">CARE</span></h3>
+            <p>視狀況敷上草藥膏或以肌內效貼紮支持，並說明調理後 24–48 小時的注意事項。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 方案與價格 ============ -->
+  <section class="block" id="price">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">PRICE — 方案與價格</span>
+        <span class="tag-rule"></span>
+      </div>
+      <div class="statement-grid">
+        <h2 class="block-title reveal">價格透明，<br>一次看懂。</h2>
+        <p class="statement-note reveal">費用在調理開始前說清楚，沒有隱藏加價。</p>
+      </div>
+
+      <div class="plans">
+        <article class="plan reveal">
+          <header class="plan-head">
+            <span class="plan-idx">02</span>
+            <h3>中軸骨調理</h3>
+            <p class="plan-for">適合頸、胸、腰、臀部（骨盆）調理</p>
+          </header>
+          <div class="plan-price">
+            <span class="price">NT$1200–1800</span>
+            <span class="price-note">60 分鐘起</span>
+          </div>
+          <ul class="plan-list">
+            <li>物理評估</li>
+            <li>美式整復</li>
+            <li>肌筋膜鬆動術</li>
+            <li>紅外線拔罐器</li>
+            <li>深層按摩槍</li>
+            <li>動作控制</li>
+            <li>草藥膏或肌內效貼紮</li>
+          </ul>
+          <p class="plan-addon">加購 — 搭配附肢骨調理（例如肩＋頸、腰＋髖）300 元／20 分</p>
+        </article>
+      </div>
+      <p class="cross-link reveal">查看完整方案比較（附肢骨調理、全身按摩）→ <a href="/#plans" class="link-underline">收費方案總覽</a></p>
+    </div>
+  </section>
+
+  <!-- ============ 本頁 FAQ ============ -->
+  <section class="block" id="faq">
+    <div class="wrap">
+      <div class="tagline reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">FAQ — 美式整復常見問題</span>
+        <span class="tag-rule"></span>
+      </div>
+      <h2 class="block-title reveal">預約前，你可能想問</h2>
+
+      <div class="accordion">
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q1</span>
+            <span class="acc-q">美式整復會痛嗎？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p>多數人在調理過程中只會感到關節鬆開的聲響與釋放感，並不是疼痛。整復師會先經過物理評估確認狀況，手法力道也會依每個人的身體回饋即時調整。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q2</span>
+            <span class="acc-q">美式整復跟傳統整復推拿有什麼不同？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p>傳統整復推拿多以大面積的推、拿、按、揉放鬆軟組織；美式整復則以評估為核心，針對特定關節施以快速、精準、小幅度的調整手法。青嵩工坊的做法是兩者結合：先以美式整復校準關節，再用肌筋膜鬆動術處理周邊軟組織。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q3</span>
+            <span class="acc-q">什麼情況不適合做美式整復？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p>若有骨折、急性扭挫傷紅腫熱痛、嚴重骨質疏鬆、孕期，或正在接受醫療處置，建議先就醫評估再考慮調理。青嵩工坊非醫療院所，調理前如對自身狀況有疑慮，歡迎先透過 LINE 與我們討論。</p>
+          </div>
+        </div>
+        <div class="acc-item reveal">
+          <button class="acc-head" aria-expanded="false">
+            <span class="acc-idx">Q4</span>
+            <span class="acc-q">第一次來需要準備什麼？</span>
+            <span class="acc-icon" aria-hidden="true"></span>
+          </button>
+          <div class="acc-body">
+            <p>穿著寬鬆、方便活動的衣物即可，不用刻意空腹（建議調理前 1～2 小時進食到 6～7 分飽）。第一次會先做完整的物理評估與動作檢測，請預留約 60 分鐘。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT CTA ============ -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div class="tagline tagline--dark reveal">
+        <span class="tag-dot"></span>
+        <span class="tag-label">CONTACT — 預約調理</span>
+        <span class="tag-rule"></span>
+      </div>
+
+      <h2 class="contact-title reveal">預約美式整復調理</h2>
+      <a class="contact-phone reveal" href="tel:+886912641105">0912-641-105</a>
+
+      <div class="contact-grid reveal">
+        <div class="contact-cell">
+          <span class="contact-label">地址 — ADDRESS</span>
+          <p>高雄市新興區林森一路 242 號 1 樓</p>
+        </div>
+        <div class="contact-cell">
+          <span class="contact-label">營業 — HOURS</span>
+          <p>週一至週日 11:30–20:30（最後預約）<br>特約時段 09:00–11:00</p>
+        </div>
+        <div class="contact-cell">
+          <span class="contact-label">社群 — SOCIAL</span>
+          <p class="social-links">
+            <a href="https://www.facebook.com/qingsongstudio/" target="_blank" rel="noopener" class="link-underline link-underline--dark">FB</a>
+            <a href="https://lin.ee/biKerHf" target="_blank" rel="noopener" class="link-underline link-underline--dark">LINE</a>
+            <a href="https://www.instagram.com/qs_studio_/" target="_blank" rel="noopener" class="link-underline link-underline--dark">IG</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="contact-cta reveal">
+        <a href="https://lin.ee/89dvdlm" target="_blank" rel="noopener" class="btn-pill btn-pill--light">立即預約<span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ============ FOOTER（與首頁相同） ============ -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span><a href="/" style="color:inherit;text-decoration:none">青嵩工坊首頁</a></span>
+    <span>青嵩傳統整復推拿 ・ 統編：91522632</span>
+    <span>本中心非醫療院所，不提供任何醫療行為</span>
+    <span>© 2023–2026 青嵩工坊 QS STUDIO</span>
+  </div>
+</footer>
+
+<script src="/script.js"></script>
+</body>
+</html>
