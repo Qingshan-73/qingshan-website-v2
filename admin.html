@@ -1,115 +1,12 @@
-<!DOCTYPE html>
-<html lang="zh-Hant-TW">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>內容管理 · 青嵩工坊 QS STUDIO</title>
-<meta name="robots" content="noindex, nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
-<style>
-/* ============================================================
-   後台專用樣式（覆蓋前台動畫，讓內容在編輯時全部可見）
-   ============================================================ */
-.reveal { opacity: 1 !important; transform: none !important; filter: none !important; }
-.acc-body { max-height: none !important; overflow: visible !important; }
-.marquee-track { animation: none !important; }
-.dot-accent::after { transform: translateX(-50%) scaleX(1) !important; }
-.tag-dot { animation: none !important; }
-.acc-head { cursor: default; }
 
-/* 後台頂部列 */
-.admin-bar {
-  position: sticky; top: 0; z-index: 9990;
-  display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
-  background: #101312; color: #f6f6f4;
-  padding: 14px 24px;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.admin-bar strong { font-size: 14px; letter-spacing: .1em; }
-.admin-bar .hint { font-size: 12px; color: rgba(246,246,244,.55); letter-spacing: .04em; }
-.admin-bar .view-site {
-  margin-left: auto;
-  font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: .12em;
-  color: #f6f6f4; text-decoration: none;
-  border: 1px solid rgba(246,246,244,.35); border-radius: 999px; padding: 7px 16px;
-}
-.admin-bar .view-site:hover { background: #f6f6f4; color: #101312; }
-
-/* 登入閘門 */
-#admin-gate {
-  position: fixed; inset: 0; z-index: 99999;
-  background: #101312;
-  display: flex; align-items: center; justify-content: center;
-  font-family: 'Noto Sans TC', sans-serif;
-}
-.gate-card {
-  width: 340px; max-width: 90vw;
-  background: #f6f6f4; padding: 40px 36px;
-}
-.gate-card .gate-tag {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px;
-  letter-spacing: .24em; color: #1e5aa8; display: block; margin-bottom: 14px;
-}
-.gate-card h2 { font-size: 22px; font-weight: 500; letter-spacing: .06em; margin-bottom: 6px; color: #101312; }
-.gate-card p { color: #8a8f8c; font-size: 13px; margin-bottom: 22px; }
-.gate-card input {
-  width: 100%; padding: 12px 14px; box-sizing: border-box;
-  border: 1px solid rgba(16,19,18,.25); background: #fff;
-  font-size: 15px; margin-bottom: 14px; outline: none;
-}
-.gate-card input:focus { border-color: #1e5aa8; }
-.gate-card button {
-  width: 100%; padding: 13px; border: none; cursor: pointer;
-  background: #101312; color: #f6f6f4; font-weight: 500; font-size: 14px; letter-spacing: .12em;
-}
-.gate-card button:hover { background: #1e5aa8; }
-#gateError { color: #b33; font-size: 12.5px; margin-top: 12px; display: none; }
-
-/* 發布工具列 */
-#admin-toolbar {
-  display: none; position: fixed; bottom: 16px; right: 16px; z-index: 9998;
-  background: #101312; padding: 12px 16px;
-  align-items: center; gap: 10px;
-  box-shadow: 0 8px 30px rgba(0,0,0,.3);
-  font-family: 'Noto Sans TC', sans-serif;
-  max-width: calc(100vw - 32px); flex-wrap: wrap;
-}
-#publishStatus { color: rgba(246,246,244,.7); font-size: 12px; max-width: 240px; line-height: 1.6; }
-#resetBtn {
-  cursor: pointer; border: 1px solid rgba(246,246,244,.4); background: transparent;
-  color: #f6f6f4; font-weight: 500; font-size: 12.5px; padding: 10px 16px; letter-spacing: .06em;
-}
-#publishBtn {
-  cursor: pointer; border: none; background: #1e5aa8;
-  color: #fff; font-weight: 500; font-size: 13px; padding: 10px 18px; letter-spacing: .06em;
-}
-#publishBtn:hover { background: #1d4a45; }
-</style>
-</head>
-<body>
-
-<div class="admin-bar">
-  <strong>青嵩工坊 · 內容管理</strong>
-  <span class="hint">點文字可改 ・ 點圖片可換 ・ 點統計數字可改數值 ・ 卡片右上角 × 刪除 ・ 底部「＋新增」加一筆</span>
-  <a class="view-site" href="/" target="_blank">檢視前台 ↗</a>
-</div>
-
-<!-- ════════════════════════════════════════════════════════════
-     編輯畫布：與前台 index.html 的 site-content 主內容完全一致
-     「重設為預設內容」會還原成以下這份 HTML
-     ════════════════════════════════════════════════════════════ -->
-<main id="site-content">
 <!-- ============ HERO 首屏 ============ -->
   <section class="hero" id="top">
     <div class="wrap">
       <!-- ◆ 後台欄位：hero_meta_1 / hero_meta_2 / hero_meta_3 — 頂部三則等寬小字 -->
       <div class="hero-meta reveal">
-        <span data-field="hero_meta_1">KAOHSIUNG · XINXING DIST.</span>
-        <span data-field="hero_meta_2">中西式運動整復推拿</span>
-        <span data-field="hero_meta_3">CHINESE TUI-NA × AMERICAN CHIROPRACTIC</span>
+        <span data-field="hero_meta_1" style="">KAOHSIUNG · XINXING DIST.</span>
+        <span data-field="hero_meta_2" style="">中西式運動整復推拿</span>
+        <span data-field="hero_meta_3" style="">CHINESE TUI-NA × AMERICAN CHIROPRACTIC</span>
       </div>
 
       <div class="hero-grid">
@@ -117,11 +14,11 @@
           <!-- ◆ 後台欄位：hero_title_1 / hero_title_2 — 主標兩行
                注意：<i class="dot-accent"> 包住要做「藍青漸層底線」的詞，請保留 -->
           <h1 class="hero-title">
-            <span class="line reveal" data-field="hero_title_1">健康的大腦，</span>
-            <span class="line reveal" data-field="hero_title_2">源於健康的<i class="dot-accent">身體</i>。</span>
+            <span class="line reveal" data-field="hero_title_1" style="">健康的大腦，</span>
+            <span class="line reveal" data-field="hero_title_2" style="">源於健康的<i class="dot-accent">身體</i>。</span>
           </h1>
           <!-- ◆ 後台欄位：hero_lede — 主標下說明段 -->
-          <p class="hero-lede reveal" data-field="hero_lede">
+          <p class="hero-lede reveal" data-field="hero_lede" style="">
             放鬆，是重新校準身體的起點。青嵩工坊結合中式整復推拿與美式脊骨手法，為久坐辦公與運動愛好者釋放深層緊繃——並透過動作控制訓練，讓身體的靈活與活力真正被留住。
           </p>
           <div class="hero-actions reveal">
@@ -132,26 +29,26 @@
         </div>
         <!-- ◆ 後台欄位：hero_image（建議直向 4:5）/ hero_image_cap（圖說小字） -->
         <figure class="hero-figure reveal">
-          <img src="images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行運動按摩" loading="eager" data-field="hero_image">
-          <figcaption class="mono-cap" data-field="hero_image_cap">FIG.01 — RELEASE・放鬆</figcaption>
+          <img src="images/treatment-scene.jpg" alt="青嵩工坊整復師為客戶進行運動按摩" loading="eager" data-field="hero_image" title="" style="">
+          <figcaption class="mono-cap" data-field="hero_image_cap" style="">FIG.01 — RELEASE・放鬆</figcaption>
         </figure>
       </div>
 
       <!-- ◆ 後台欄位：stats_lede（傳承引言）＋ stat_1~3_value + stat_1~3_label
            注意：數值填 data-count（純數字，會自動加千分位）；後綴如 "+" 填 data-suffix（可省略） -->
       <div class="stats reveal" id="stats">
-        <p class="stats-lede" data-field="stats_lede">三十年整復手藝的傳承——承繼百年整復文化，累積上萬人次的身體經驗。</p>
+        <p class="stats-lede" data-field="stats_lede" style="">三十年整復手藝的傳承——承繼百年整復文化，累積上萬人次的身體經驗。</p>
         <div class="stat">
-          <span class="stat-num"><span data-count="30" data-field="stat_1_value">0</span></span>
-          <span class="stat-label" data-field="stat_1_label">年・手藝傳承</span>
+          <span class="stat-num"><span data-count="30" data-field="stat_1_value" title="" style="">0</span></span>
+          <span class="stat-label" data-field="stat_1_label" style="">年・手藝傳承</span>
         </div>
         <div class="stat">
-          <span class="stat-num"><span data-count="100" data-field="stat_2_value">0</span></span>
-          <span class="stat-label" data-field="stat_2_label">年・整復文化底蘊</span>
+          <span class="stat-num"><span data-count="100" data-field="stat_2_value" title="" style="">0</span></span>
+          <span class="stat-label" data-field="stat_2_label" style="">年・整復文化底蘊</span>
         </div>
         <div class="stat">
-          <span class="stat-num"><span data-count="10000" data-suffix="+" data-field="stat_3_value">0</span></span>
-          <span class="stat-label" data-field="stat_3_label">人次・調理經驗</span>
+          <span class="stat-num"><span data-count="10000" data-suffix="+" data-field="stat_3_value" title="" style="">0</span></span>
+          <span class="stat-label" data-field="stat_3_label" style="">人次・調理經驗</span>
         </div>
       </div>
     </div>
@@ -177,8 +74,8 @@
 
       <div class="statement-grid">
         <!-- ◆ 後台欄位：philosophy_title（<br> 為換行，請保留）/ philosophy_note -->
-        <h2 class="statement reveal" data-field="philosophy_title">放鬆只是開始，<br>訓練才是關鍵。</h2>
-        <p class="statement-note reveal" data-field="philosophy_note">
+        <h2 class="statement reveal" data-field="philosophy_title" style="">放鬆只是開始，<br>訓練才是關鍵。</h2>
+        <p class="statement-note reveal" data-field="philosophy_note" style="">
           肌肉放鬆、關節鬆動能讓身體立刻感到輕盈——但這只是短期的舒緩。青嵩工坊在調理之外，同樣重視動作控制訓練，讓身體的靈活度真正被留住。
         </p>
       </div>
@@ -188,19 +85,19 @@
         <article class="principle reveal">
           <span class="principle-idx">01</span>
           <div class="principle-body">
-            <h3><span data-field="principle_1_title">放鬆</span><span class="principle-en" data-field="principle_1_en">RELEASE</span></h3>
-            <p data-field="principle_1_desc">透過肌筋膜鬆動術與美式整復手法，釋放深層緊繃的肌肉與關節，快速找回身體的輕盈感。</p>
+            <h3><span data-field="principle_1_title" style="">放鬆</span><span class="principle-en" data-field="principle_1_en" style="">RELEASE</span></h3>
+            <p data-field="principle_1_desc" style="">透過肌筋膜鬆動術與美式整復手法，釋放深層緊繃的肌肉與關節，快速找回身體的輕盈感。</p>
           </div>
         </article>
         <!-- ◆ 後台欄位：principle_2_title / principle_2_en / principle_2_desc / principle_2_image -->
         <article class="principle reveal">
           <span class="principle-idx">02</span>
           <div class="principle-body">
-            <h3><span data-field="principle_2_title">訓練</span><span class="principle-en" data-field="principle_2_en">RETRAIN</span></h3>
-            <p data-field="principle_2_desc">搭配動作控制訓練，重新建立正確的動作模式，讓放鬆的效果延續，而不是很快又緊繃回來。</p>
+            <h3><span data-field="principle_2_title" style="">訓練</span><span class="principle-en" data-field="principle_2_en" style="">RETRAIN</span></h3>
+            <p data-field="principle_2_desc" style="">搭配動作控制訓練，重新建立正確的動作模式，讓放鬆的效果延續，而不是很快又緊繃回來。</p>
           </div>
           <figure class="principle-figure">
-            <img src="images/movement-training.jpg" alt="青嵩工坊團隊進行動作評估訓練" loading="lazy" data-field="principle_2_image">
+            <img src="images/movement-training.jpg" alt="青嵩工坊團隊進行動作評估訓練" loading="lazy" data-field="principle_2_image" title="" style="">
           </figure>
         </article>
       </div>
@@ -215,39 +112,39 @@
         <span class="tag-label">TEAM — 整復師</span>
         <span class="tag-rule"></span>
       </div>
-      <h2 class="block-title reveal" data-field="team_title">整復師推薦</h2>
+      <h2 class="block-title reveal" data-field="team_title" style="">整復師推薦</h2>
 
       <div class="team-grid" data-repeatable="member">
         <!-- ◆◆ 可重複區塊：member（容器上有 data-repeatable 標記）
              每新增一位整復師，複製整個 <article class="member"> 區塊。
              欄位：member_name / member_role / member_photo（建議直向 3:4） -->
-        <article class="member reveal">
+        <article class="member reveal" style="position: relative;">
           <figure class="member-photo">
-            <img src="images/team-chenqingshan.jpg" alt="整復師 陳青杉" loading="lazy" data-field="member_photo">
+            <img src="images/team-chenqingshan.jpg" alt="整復師 陳青杉" loading="lazy" data-field="member_photo" title="" style="">
           </figure>
           <div class="member-info">
-            <h3 data-field="member_name">陳青杉</h3>
-            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT SPECIALIST</span>
+            <h3 data-field="member_name" style="">陳青杉</h3>
+            <span class="member-role" data-field="member_role" style="">整復師 — ADJUSTMENT SPECIALIST</span>
           </div>
         </article>
 
-        <article class="member reveal">
+        <article class="member reveal" style="position: relative;">
           <figure class="member-photo">
-            <img src="images/team-changjunwei.jpg" alt="整復師 常鈞崴" loading="lazy" data-field="member_photo">
+            <img src="images/team-changjunwei.jpg" alt="整復師 常鈞崴" loading="lazy" data-field="member_photo" title="" style="">
           </figure>
           <div class="member-info">
-            <h3 data-field="member_name">常鈞崴</h3>
-            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT SPECIALIST</span>
+            <h3 data-field="member_name" style="">常鈞崴</h3>
+            <span class="member-role" data-field="member_role" style="">整復師 — ADJUSTMENT SPECIALIST</span>
           </div>
         </article>
 
-        <article class="member reveal">
+        <article class="member reveal" style="position: relative;">
           <figure class="member-photo">
-            <img src="images/team-member3.jpg" alt="青嵩工坊團隊成員" loading="lazy" data-field="member_photo">
+            <img src="images/team-member3.jpg" alt="青嵩工坊團隊成員" loading="lazy" data-field="member_photo" title="" style="">
           </figure>
           <div class="member-info">
-            <h3 data-field="member_name">青嵩團隊</h3>
-            <span class="member-role" data-field="member_role">整復師 — ADJUSTMENT SPECIALIST</span>
+            <h3 data-field="member_name" style="">青嵩團隊</h3>
+            <span class="member-role" data-field="member_role" style="">整復師 — ADJUSTMENT SPECIALIST</span>
           </div>
         </article>
       </div>
@@ -264,8 +161,8 @@
       </div>
       <div class="statement-grid">
         <!-- ◆ 後台欄位：plans_title / plans_note -->
-        <h2 class="block-title reveal" data-field="plans_title">結合中西手法的<br>整復服務</h2>
-        <p class="statement-note reveal" data-field="plans_note">依調理部位與方式分成三種方案，價格與內含項目一次看清楚。</p>
+        <h2 class="block-title reveal" data-field="plans_title" style="">結合中西手法的<br>整復服務</h2>
+        <p class="statement-note reveal" data-field="plans_note" style="">依調理部位與方式分成三種方案，價格與內含項目一次看清楚。</p>
       </div>
 
       <div class="plans" data-repeatable="plan">
@@ -337,9 +234,10 @@
           </ul>
           <p class="plan-addon" data-field="plan_addon" style="">加購 — 搭配美式整復 400 元</p>
         </article>
-               </div>
+      </div>
     </div>
   </section>
+
   <!-- ============ 常見問題 ============ -->
   <section class="block" id="faq">
     <div class="wrap">
@@ -349,51 +247,51 @@
         <span class="tag-rule"></span>
       </div>
       <!-- ◆ 後台欄位：faq_title / faq_sub -->
-      <h2 class="block-title reveal" data-field="faq_title">來之前，你可能想知道的事</h2>
-      <p class="block-sub reveal" data-field="faq_sub">不只是運動員——久坐、姿勢不良造成的肌肉緊繃，也是我們每天在處理的日常。</p>
+      <h2 class="block-title reveal" data-field="faq_title" style="">來之前，你可能想知道的事</h2>
+      <p class="block-sub reveal" data-field="faq_sub" style="">不只是運動員——久坐、姿勢不良造成的肌肉緊繃，也是我們每天在處理的日常。</p>
 
       <div class="accordion" id="accordion" data-repeatable="acc-item">
         <!-- ◆◆ 可重複區塊：acc-item（容器上有 data-repeatable 標記）
              每新增一則問答，複製整個 <div class="acc-item"> 區塊。
              欄位：faq_q / faq_a；acc-idx 的 Q1~Q4 依筆數編號 -->
-        <div class="acc-item reveal">
+        <div class="acc-item reveal" style="position: relative;">
           <button class="acc-head" aria-expanded="false">
             <span class="acc-idx">Q1</span>
-            <span class="acc-q" data-field="faq_q">整天坐辦公室、肩頸僵硬也可以來嗎？</span>
+            <span class="acc-q" data-field="faq_q" style="">整天坐辦公室、肩頸僵硬也可以來嗎？</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body">
-            <p data-field="faq_a">可以。除了提升運動表現，久坐、姿勢不良造成的肌肉緊繃，也是我們平常最常處理的狀況之一。</p>
+            <p data-field="faq_a" style="">可以。除了提升運動表現，久坐、姿勢不良造成的肌肉緊繃，也是我們平常最常處理的狀況之一。</p>
           </div>
         </div>
-        <div class="acc-item reveal">
+        <div class="acc-item reveal" style="position: relative;">
           <button class="acc-head" aria-expanded="false">
             <span class="acc-idx">Q2</span>
-            <span class="acc-q" data-field="faq_q">調理前需要空腹嗎？</span>
+            <span class="acc-q" data-field="faq_q" style="">調理前需要空腹嗎？</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body">
-            <p data-field="faq_a">不用刻意空腹，建議調理前 1～2 小時進食到 6～7 分飽即可，太餓或太飽都不建議。</p>
+            <p data-field="faq_a" style="">不用刻意空腹，建議調理前 1～2 小時進食到 6～7 分飽即可，太餓或太飽都不建議。</p>
           </div>
         </div>
-        <div class="acc-item reveal">
+        <div class="acc-item reveal" style="position: relative;">
           <button class="acc-head" aria-expanded="false">
             <span class="acc-idx">Q3</span>
-            <span class="acc-q" data-field="faq_q">調理後多久可以恢復正常活動？</span>
+            <span class="acc-q" data-field="faq_q" style="">調理後多久可以恢復正常活動？</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body">
-            <p data-field="faq_a">建議先降到平常強度的 3 成左右（例如原本跑步 100 分鐘先降到 30 分鐘），觀察沒有不適後再逐步恢復。</p>
+            <p data-field="faq_a" style="">建議先降到平常強度的 3 成左右（例如原本跑步 100 分鐘先降到 30 分鐘），觀察沒有不適後再逐步恢復。</p>
           </div>
         </div>
-        <div class="acc-item reveal">
+        <div class="acc-item reveal" style="position: relative;">
           <button class="acc-head" aria-expanded="false">
             <span class="acc-idx">Q4</span>
-            <span class="acc-q" data-field="faq_q">多久該回來調理一次？</span>
+            <span class="acc-q" data-field="faq_q" style="">多久該回來調理一次？</span>
             <span class="acc-icon" aria-hidden="true"></span>
           </button>
           <div class="acc-body">
-            <p data-field="faq_a">可依身體疲勞感（1～10 分）抓頻率：1～3 分約一個月一次，4～6 分約 2～3 週一次，7～9 分建議每週 1～2 次。</p>
+            <p data-field="faq_a" style="">可依身體疲勞感（1～10 分）抓頻率：1～3 分約一個月一次，4～6 分約 2～3 週一次，7～9 分建議每週 1～2 次。</p>
           </div>
         </div>
       </div>
@@ -410,26 +308,26 @@
       </div>
 
       <!-- ◆ 後台欄位：contact_title -->
-      <h2 class="contact-title reveal" data-field="contact_title">歡迎預約體驗</h2>
+      <h2 class="contact-title reveal" data-field="contact_title" style="">歡迎預約體驗</h2>
       <!-- ◆ 後台欄位：contact_phone（顯示文字）
            注意：href="tel:+886..." 為撥號連結，改號碼時兩處都要更新 -->
-      <a class="contact-phone reveal" href="tel:+886912641105" data-field="contact_phone">0912-641-105</a>
+      <a class="contact-phone reveal" href="tel:+886912641105" data-field="contact_phone" style="">0912-641-105</a>
 
       <div class="contact-grid reveal">
         <div class="contact-cell">
           <span class="contact-label">地址 — ADDRESS</span>
-          <p data-field="contact_address">高雄市新興區林森一路 242 號 1 樓</p>
+          <p data-field="contact_address" style="">高雄市新興區林森一路 242 號 1 樓</p>
         </div>
         <div class="contact-cell">
           <span class="contact-label">營業 — HOURS</span>
           <!-- ◆ 後台欄位：contact_hours（<br> 為換行，請保留） -->
-          <p data-field="contact_hours">週一至週日 11:30–20:30（最後預約）<br>特約時段 09:00–11:00</p>
+          <p data-field="contact_hours" style="">週一至週日 11:30–20:30（最後預約）<br>特約時段 09:00–11:00</p>
         </div>
         <div class="contact-cell">
           <span class="contact-label">社群 — SOCIAL</span>
           <!-- ◆ 後台欄位：social_fb / social_line / social_ig / social_mail
                只需替換各 <a> 的 href -->
-          <p class="social-links">
+          <p class="social-links" style="">
             <a href="https://www.facebook.com/qingsongstudio/" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_fb">FB</a>
             <a href="https://lin.ee/biKerHf" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_line">LINE</a>
             <a href="https://www.instagram.com/qs_studio_/" target="_blank" rel="noopener" class="link-underline link-underline--dark" data-field="social_ig">IG</a>
@@ -445,273 +343,7 @@
 
       <!-- ◆ 後台欄位：contact_map — Google Maps 嵌入網址（只換 src） -->
       <div class="contact-map reveal" data-field="contact_map">
-        <iframe src="https://www.google.com/maps?q=高雄市新興區林森一路242號&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="青嵩工坊位置地圖"></iframe>
+        <iframe src="https://www.google.com/maps?q=高雄市新興區林森一路242號&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="青嵩工坊位置地圖"></iframe>
       </div>
     </div>
   </section>
-</main>
-
-<!-- 登入閘門 -->
-<div id="admin-gate">
-  <div class="gate-card">
-    <span class="gate-tag">QS STUDIO · ADMIN</span>
-    <h2>後台登入</h2>
-    <p>輸入管理密碼以編輯網站內容</p>
-    <input id="gatePassword" type="password" placeholder="密碼">
-    <button id="gateSubmit">登入</button>
-    <p id="gateError">密碼錯誤，請再試一次</p>
-  </div>
-</div>
-
-<!-- 發布工具列 -->
-<div id="admin-toolbar">
-  <span id="publishStatus">修改完成後，按「發布到正式網站」</span>
-  <button id="resetBtn">重設為預設內容</button>
-  <button id="publishBtn">發布到正式網站</button>
-</div>
-
-<script>
-(function(){
-  'use strict';
-
-  var PASSWORD_KEY = null;
-
-  /* 可點擊編輯的文字元素（對應新版樣式 class） */
-  var EDITABLE_SELECTOR = [
-    '.hero-title .line', '.hero-lede', '.hero-meta span', '.mono-cap',
-    '.statement', '.statement-note', '.block-title', '.block-sub',
-    '.principle-body h3 span', '.principle-body p', '.principle-en',
-    '.member-info h3', '.member-role',
-    '.plan-head h3', '.plan-for', '.price', '.price-note',
-    '.plan-list li', '.plan-addon',
-    '.acc-q', '.acc-body p',
-    '.contact-title', '.contact-phone', '.contact-cell p',
-    '.stats-lede', '.stat-label'
-  ].join(',');
-
-  var PLACEHOLDER_IMG = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e6e6e2'/><text x='50' y='58' font-size='36' text-anchor='middle' fill='%231e5aa8'>+</text></svg>";
-
-  /* 「重設為預設內容」用的原始畫布 */
-  var DEFAULT_HTML = document.getElementById('site-content').innerHTML;
-
-  /* ---------- 圖片：點擊更換 ---------- */
-  function attachImageHandler(img){
-    if (img.dataset.editBound) return;
-    img.dataset.editBound = '1';
-    img.style.cursor = 'pointer';
-    img.title = '點擊更換這張圖片（建議先壓縮至 500KB 內）';
-    img.style.outline = '2px dashed rgba(30,90,168,.6)';
-    img.style.outlineOffset = '-2px';
-    img.addEventListener('click', function(){
-      var input = document.createElement('input');
-      input.type = 'file';
-      input.accept = 'image/*';
-      input.onchange = function(e){
-        var file = e.target.files[0];
-        if (!file) return;
-        var reader = new FileReader();
-        reader.onload = function(ev){ img.src = ev.target.result; };
-        reader.readAsDataURL(file);
-      };
-      input.click();
-    });
-  }
-
-  /* ---------- 統計數字：點擊改 data-count ---------- */
-  function attachCounterHandler(el){
-    if (el.dataset.countBound) return;
-    el.dataset.countBound = '1';
-    el.textContent = el.dataset.count + (el.dataset.suffix || '');
-    el.style.cursor = 'pointer';
-    el.title = '點擊修改數值';
-    el.style.borderBottom = '2px dashed rgba(30,90,168,.6)';
-    el.addEventListener('click', function(){
-      var v = prompt('輸入數字（純數字）：', el.dataset.count);
-      if (v === null) return;
-      var s = prompt('後綴符號（例如 + ，不需要可留空）：', el.dataset.suffix || '');
-      el.dataset.count = v;
-      if (s) { el.dataset.suffix = s; } else { el.removeAttribute('data-suffix'); }
-      el.textContent = v + (s || '');
-    });
-  }
-
-  /* ---------- 卡片：右上角刪除鈕 ---------- */
-  function attachDeleteButton(grid, card, tag){
-    if (card.querySelector('.card-del-btn')) return;
-    var del = document.createElement('button');
-    del.className = 'card-del-btn';
-    del.type = 'button';
-    del.textContent = '×';
-    del.style.cssText = 'position:absolute;top:8px;right:8px;width:28px;height:28px;border-radius:50%;border:none;background:#101312;color:#f6f6f4;font-size:16px;line-height:1;cursor:pointer;z-index:20;';
-    del.addEventListener('click', function(e){
-      e.stopPropagation();
-      e.preventDefault();
-      card.remove();
-      renumber(grid, tag);
-    });
-    card.style.position = card.style.position || 'relative';
-    card.appendChild(del);
-  }
-
-  /* ---------- 新增卡片：依類型產生新版結構 ---------- */
-  function createCard(tag){
-    var el;
-    if (tag === 'member'){
-      el = document.createElement('article');
-      el.className = 'member reveal';
-      el.innerHTML =
-        '<figure class="member-photo"><img src="' + PLACEHOLDER_IMG + '" alt="團隊成員"></figure>' +
-        '<div class="member-info"><h3>姓名</h3>' +
-        '<span class="member-role">整復師 — ADJUSTMENT SPECIALIST</span></div>';
-    } else if (tag === 'plan'){
-      el = document.createElement('article');
-      el.className = 'plan reveal';
-      el.innerHTML =
-        '<header class="plan-head"><span class="plan-idx">00</span>' +
-        '<h3>方案名稱</h3><p class="plan-for">適用部位說明</p></header>' +
-        '<div class="plan-price"><span class="price">NT$0</span>' +
-        '<span class="price-note">時長說明</span></div>' +
-        '<ul class="plan-list"><li>包含項目</li></ul>' +
-        '<p class="plan-addon">加購 — 說明（不需要可刪除此段文字）</p>';
-    } else if (tag === 'acc-item'){
-      el = document.createElement('div');
-      el.className = 'acc-item reveal';
-      el.innerHTML =
-        '<button class="acc-head" type="button" aria-expanded="false">' +
-        '<span class="acc-idx">Q0</span><span class="acc-q">新的問題</span>' +
-        '<span class="acc-icon" aria-hidden="true"></span></button>' +
-        '<div class="acc-body"><p>回答內容。</p></div>';
-    }
-    return el;
-  }
-
-  /* ---------- 編號重排（方案 01/02/03、FAQ Q1/Q2…） ---------- */
-  function renumber(grid, tag){
-    if (tag === 'plan'){
-      grid.querySelectorAll('.plan .plan-idx').forEach(function(el, i){
-        el.textContent = ('0' + (i + 1)).slice(-2);
-      });
-    }
-    if (tag === 'acc-item'){
-      grid.querySelectorAll('.acc-item .acc-idx').forEach(function(el, i){
-        el.textContent = 'Q' + (i + 1);
-      });
-    }
-  }
-
-  /* ---------- 區塊底部的「＋新增」 ---------- */
-  function makeAddButton(grid, tag){
-    var btn = document.createElement('div');
-    btn.className = 'add-card-btn';
-    btn.textContent = '＋ 新增一筆';
-    btn.style.cssText = 'display:flex;align-items:center;justify-content:center;border:2px dashed rgba(30,90,168,.5);color:#1e5aa8;font-weight:500;letter-spacing:.1em;cursor:pointer;min-height:120px;padding:24px;font-family:"Noto Sans TC",sans-serif;';
-    btn.addEventListener('click', function(){
-      var card = createCard(tag);
-      if (!card) return;
-      grid.insertBefore(card, btn);
-      attachDeleteButton(grid, card, tag);
-      card.querySelectorAll('img').forEach(attachImageHandler);
-      makeEditable(card);
-      renumber(grid, tag);
-    });
-    grid.appendChild(btn);
-  }
-
-  /* ---------- 讓範圍內的文字可編輯 ---------- */
-  function makeEditable(scope){
-    scope.querySelectorAll(EDITABLE_SELECTOR).forEach(function(el){
-      el.contentEditable = true;
-      el.style.outline = '1px dashed rgba(30,90,168,.45)';
-      el.style.outlineOffset = '3px';
-    });
-    scope.querySelectorAll('img').forEach(attachImageHandler);
-    scope.querySelectorAll('[data-count]').forEach(attachCounterHandler);
-  }
-
-  function enableEditor(){
-    var content = document.getElementById('site-content');
-    makeEditable(content);
-    content.querySelectorAll('[data-repeatable]').forEach(function(grid){
-      var tag = grid.getAttribute('data-repeatable');
-      grid.querySelectorAll('.' + tag).forEach(function(card){
-        attachDeleteButton(grid, card, tag);
-      });
-      makeAddButton(grid, tag);
-    });
-    document.getElementById('admin-toolbar').style.display = 'flex';
-  }
-
-  function loadContent(){
-    return fetch('/api/content').then(function(r){ return r.ok ? r.json() : null; }).then(function(data){
-      if (data && data.html) {
-        document.getElementById('site-content').innerHTML = data.html;
-      }
-    }).catch(function(){});
-  }
-
-  /* ---------- 登入閘門（密碼在「發布」時由後端驗證） ---------- */
-  document.getElementById('gateSubmit').addEventListener('click', function(){
-    var pw = document.getElementById('gatePassword').value;
-    if (!pw) return;
-    PASSWORD_KEY = pw;
-    document.getElementById('admin-gate').style.display = 'none';
-    loadContent().then(enableEditor);
-  });
-  document.getElementById('gatePassword').addEventListener('keydown', function(e){
-    if (e.key === 'Enter') document.getElementById('gateSubmit').click();
-  });
-
-  /* ---------- 重設為預設內容 ---------- */
-  document.getElementById('resetBtn').addEventListener('click', function(){
-    if (!confirm('確定要重設為預設內容嗎？這會蓋掉目前所有修改，重設後需再按「發布」才會套用到正式網站。')) return;
-    document.getElementById('site-content').innerHTML = DEFAULT_HTML;
-    enableEditor();
-    document.getElementById('publishStatus').textContent = '已重設，確認內容後記得按「發布到正式網站」';
-  });
-
-  /* ---------- 發布：清掉編輯輔助元素後送出 ---------- */
-  document.getElementById('publishBtn').addEventListener('click', function(){
-    var status = document.getElementById('publishStatus');
-    status.textContent = '發布中…';
-    var temp = document.createElement('div');
-    temp.innerHTML = document.getElementById('site-content').innerHTML;
-    temp.querySelectorAll('.card-del-btn, .add-card-btn').forEach(function(el){ el.remove(); });
-    temp.querySelectorAll('[contenteditable]').forEach(function(el){
-      el.removeAttribute('contenteditable');
-      el.style.outline = '';
-      el.style.outlineOffset = '';
-    });
-    temp.querySelectorAll('img').forEach(function(img){
-      img.style.cursor = '';
-      img.title = '';
-      img.style.outline = '';
-      img.style.outlineOffset = '';
-      img.removeAttribute('data-edit-bound');
-    });
-    temp.querySelectorAll('[data-count]').forEach(function(el){
-      el.textContent = '0';   /* 前台會用 data-count 跑數字遞增動畫 */
-      el.style.cursor = '';
-      el.title = '';
-      el.style.borderBottom = '';
-      el.removeAttribute('data-count-bound');
-    });
-    fetch('/api/content', {
-      method: 'POST',
-      headers: {'content-type': 'application/json'},
-      body: JSON.stringify({ password: PASSWORD_KEY, html: temp.innerHTML })
-    }).then(function(r){ return r.json(); }).then(function(res){
-      if (res.ok) {
-        status.textContent = '已發布！前台約 1 分鐘內更新。';
-      } else {
-        status.textContent = '發布失敗：' + (res.error || '密碼可能不正確');
-        document.getElementById('gateError').style.display = 'none';
-      }
-    }).catch(function(){
-      status.textContent = '發布失敗，請檢查網路連線';
-    });
-  });
-})();
-</script>
-
-</body>
-</html>
